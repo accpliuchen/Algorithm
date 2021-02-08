@@ -1,4 +1,4 @@
-package com.test.interview.insertsort;
+package com.test.interview.insertionsort;
 
 //reference link https://www.geeksforgeeks.org/insertion-sort/
 public class Test {
