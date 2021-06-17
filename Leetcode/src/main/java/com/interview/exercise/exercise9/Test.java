@@ -22,11 +22,20 @@ public class Test {
 
     }
 
+
+//    public static boolean isPalindrome(int n){
+//        char str[]=Integer.toString(n).toCharArray();
+//
+//        for(int i=0,j=str.length-1;i<j;i++,j--) {
+//            if(str[i]!=str[j])
+//                return false;
+//        }
+//        return true;
+//    }
+
     public static void main(String args[]){
         boolean result=isPalindrome(1221);
 
         System.out.println(result);
-
-        System.out.println(10%10);
     }
 }
