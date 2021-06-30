@@ -4,7 +4,7 @@ package com.test.interview.quicksort;
 public class Test {
     public static void main(String args[]){
 
-        int[] array={5,7,1,8,4};
+        int[] array={7, 13, 5, 17, 19, 3, 11, 2};
 
         System.out.println("排序之前：");
 
