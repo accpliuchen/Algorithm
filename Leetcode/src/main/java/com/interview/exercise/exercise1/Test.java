@@ -11,16 +11,13 @@ public class Test{
 
 
         int[] res = new int[2];
-        for (int i = 0; i < nums.length; ++i) {
-            map.put(nums[i], i);
-        }
-        for (int i = 0; i < nums.length; ++i) {
-            int t = target - nums[i];
-            if (map.containsKey(t) && map.get(t) != i) {
-                res[0] = i;
-                res[1] = map.get(t);
+        for(int i=0;i<nums.length;++i){
+            if(map.containsKey(target-nums[i])){
+                res[0]=i;
+                res[1]= map.get(target-nums[i]);
                 break;
             }
+            map.put(nums[i],i);
         }
         return res;
 
@@ -28,6 +25,11 @@ public class Test{
     }
 
     public static void main(String args[]){
+        Test test=new Test();
 
+        int[] nums={2, 7, 11, 15};
+        int target=9;
+
+        System.out.print(test.twoSum(nums,target)[1]);
     }
 }

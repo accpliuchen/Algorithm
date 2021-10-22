@@ -44,7 +44,7 @@ public class Test {
     }
 
     public static void main(String args[]){
-       TreeNode tree=new TreeNode(4);
+        TreeNode tree=new TreeNode(4);
         tree.right=new TreeNode(6);
         tree.left=new TreeNode(2);
         tree.left.left=new TreeNode(1);
