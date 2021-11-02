@@ -7,7 +7,6 @@ public class Test {
         int j=matrix[0].length-1;
 
         while(i<matrix.length && j>=0){
-            System.out.println("matrix[i][j] value "+matrix[i][j]);
             if(matrix[i][j]==target) return true;
             if(matrix[i][j]<target) i++;
             else j--;
