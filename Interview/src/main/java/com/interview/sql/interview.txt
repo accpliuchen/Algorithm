@@ -1,0 +1,6 @@
+City Revenue A number of cities each have a number of agencies that estimate revenues.
+The average revenue of a city is defined as the average of all agencies' estimates of revenue for a city.
+Write a query to print the floor of the average revenue of each city. The order of output does not matter.
+The result should be in the following format: CITY_NAME AVERAGE_REVENUE
+
+select CITY_NAME,floor(avg(REVENUE)) as REVENUE from cities inner join revenue on cities.city_code=revenue.city_code group by CITY_NAME;

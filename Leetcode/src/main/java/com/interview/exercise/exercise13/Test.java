@@ -17,12 +17,11 @@ public class Test {
 
         int result=0;
 
-        //思路就是遍历罗马字母，如果当前的罗马字母表示的数字比右边的大，则直接累加即可，如果比右边的小，则需要减去当前罗马字母表示的数字
         for(int i=0;i<s.length();i++){
-            if(i== s.length()-1 || romanMap.get(s.charAt(i)) >= romanMap.get(s.charAt(i + 1))){
+            if(i==s.length()-1 || romanMap.get(s.charAt(i))>=romanMap.get(s.charAt(i+1))){
                 result+=romanMap.get(s.charAt(i));
             }else{
-                result -= romanMap.get(s.charAt(i));
+                result-=romanMap.get(s.charAt(i));
             }
         }
 
