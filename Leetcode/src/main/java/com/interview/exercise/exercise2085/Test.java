@@ -21,7 +21,7 @@ public class Test {
         }
 
         for(String words:words1){
-            if(wordsOne.get(words)==1 && wordsTwo.get(words1)==1)
+            if(wordsOne.get(words)==1 && wordsTwo.getOrDefault(words,0)==1)
                 count++;
         }
 
@@ -29,8 +29,8 @@ public class Test {
     }
 
     public static void main(String args[]){
-//        String[] words1 = {"leetcode","is","amazing","as","is"}, words2 = {"amazing","leetcode","is"};
-        String[] words1 = {"a","ab"}, words2 = {"a","a","a","ab"};
+        String[] words1 = {"leetcode","is","amazing","as","is"}, words2 = {"amazing","leetcode","is"};
+//        String[] words1 = {"a","ab"}, words2 = {"a","a","a","ab"};
         Test test=new Test();
 
         System.out.println("result value is "+ test.countWords(words1,words2));
