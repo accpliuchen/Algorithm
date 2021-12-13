@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Leetcode" />
         <module name="Sort" />
+        <module name="Leetcode" />
         <module name="Datastructure" />
+        <module name="Interview" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Algorithm" target="8" />
       <module name="Datastructure" target="8" />
+      <module name="Interview" target="8" />
       <module name="Leetcode" target="8" />
       <module name="Sort" target="8" />
     </bytecodeTargetLevel>
