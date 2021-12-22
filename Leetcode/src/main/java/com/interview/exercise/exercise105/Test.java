@@ -1,8 +1,6 @@
 package com.interview.exercise.exercise105;
 
 
-import sun.reflect.generics.tree.Tree;
-
 class TreeNode {
 
     int val;

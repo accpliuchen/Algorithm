@@ -26,7 +26,7 @@ public class TreeNode {
 
 
     public static void main(String args[]){
-        TreeNode head=new TreeNode("A");
+        TreeNode head=new TreeNode('A");
         TreeNode second=new TreeNode("B");
         TreeNode three=new TreeNode("C");
         TreeNode four=new TreeNode("D");
