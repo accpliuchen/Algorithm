@@ -1,5 +1,6 @@
 package com.interview.exercise.test;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -108,22 +109,23 @@ public class Test {
 //
 //        System.out.println(evenSumK(arr, N));
 
-        char[] s=new char[]{'h','e','l','l','o'};
-        char[] c=new char[s.length];
-        char temp;
-        int k=s.length-1;
-        int a=0;
-        while(k>0){
-            temp=s[k];
-            s[k]=s[a];
-            s[a]=temp;
-            k--;
-            a++;
-        }
+//        char[] s=new char[]{'h','e','l','l','o'};
+//        char[] c=new char[s.length];
+//        char temp;
+//        int k=s.length-1;
+//        int a=0;
+//        while(k>0){
+//            temp=s[k];
+//            s[k]=s[a];
+//            s[a]=temp;
+//            k--;
+//            a++;
+//        }
+//
+//        for(int j=0;j<s.length;j++){
+//            System.out.print(s[j]);
+//        }
 
-        for(int j=0;j<s.length;j++){
-            System.out.print(s[j]);
-        }
     }
 }
 

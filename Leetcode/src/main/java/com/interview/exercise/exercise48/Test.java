@@ -8,25 +8,48 @@ package com.interview.exercise.exercise48;
 public class Test {
 
 
-    public void rotate(int[][] matrix) {
-        if (matrix == null)
-            return;
-        int n = matrix.length;
-        // 沿着副对角线旋转
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n - i; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[n - 1 - j][n - 1 - i];
-                matrix[n - 1 - j][n - 1 - i] = temp;
+//    public void rotate(int[][] matrix) {
+//        if (matrix == null)
+//            return;
+//        int n = matrix.length;
+//        // 沿着副对角线旋转
+//        for (int i = 0; i < n; i++)
+//            for (int j = 0; j < n - i; j++) {
+//                int temp = matrix[i][j];
+//                matrix[i][j] = matrix[n - 1 - j][n - 1 - i];
+//                matrix[n - 1 - j][n - 1 - i] = temp;
+//            }
+//        // 沿着中间水平线旋转
+//        for (int i = 0; i < n / 2; i++)
+//            for (int j = 0; j < n; j++) {
+//                int temp = matrix[i][j];
+//                matrix[i][j] = matrix[n - 1 - i][j];
+//                matrix[n - 1 - i][j] = temp;
+//                break;
+//            }
+//    }
+
+    public void rotate(int[][] matrix){
+        int top=0;
+        int down=matrix.length-1;
+
+        while(top<down){
+            int[] temp=matrix[top];
+            matrix[top]=matrix[down];
+            matrix[down]=temp;
+
+            top++;
+            down--;
+        }
+
+        for(int i=0;i<matrix.length;i++){
+            for(int j=i+1;j<matrix[i].length;j++){
+                int temp=matrix[i][j];
+                matrix[i][j]=matrix[j][i];
+                matrix[j][i]=temp;
             }
-        // 沿着中间水平线旋转
-        for (int i = 0; i < n / 2; i++)
-            for (int j = 0; j < n; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[n - 1 - i][j];
-                matrix[n - 1 - i][j] = temp;
-                break;
-            }
+        }
+
     }
 
     public static void main(String args[]){
