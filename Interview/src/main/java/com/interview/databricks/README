@@ -1,0 +1,19 @@
+This is one of the questions faced in Databricks OA, Code signal for 2022 New Grad:
+You are developing a microservice which is hosted in the cloud. In order to reciee updates from other services, the microservice allow applications to subscribe to notifications about different recurring events. Specifically, the microservice should be able to subscribe to or unsubscribe from recieving notifications for any recurring event at any time. Your task is to implement a fucntion eventEmitter2 which counts the number of notifications that the mocroservice recieved from each recurring event. eventEmitter2 returns an array of strings in this format:
+"<event_id> : < count >", sorted by event_id in ascending order. eventEmitter has the following parametrs:
+
+events - three eleement array representing eventId, startTime, recurringInterval
+commands - three element array represennting command type(subscribe or unsubscribe), timestamp, eventId.
+endTimeStamp - timestamp when the microservice will be shutdown.
+Example:
+For events = [[1,0,5], [2,7,3]], commands = [["subscribe", "0", "1"], ["unsubscribe", "15", "1"], ["subscribe", "4", "2"]] and endTimeStamp = 20, the output should be eventEmitter2(events, commands, endTimeStamp) = ["1:4", "2:5"]
+
+Explanation:
+Event with id 1 will occur at following timestamps: 0, 5, 10, 15, 20,...
+Event with id 2 will occur: 7, 10, 13, 16, 19, ....
+Microservice receives notifications for event 1 from timestamp 0 to 15. 4 notifications will be received during that time period.
+Microservice receives notifications for event 2 from timestamp 4 and onwards until shutdown at 20. 5 notifications will be received during that time period.
+
+More:
+events is sorted array by event id
+commands is not sorted in any order
