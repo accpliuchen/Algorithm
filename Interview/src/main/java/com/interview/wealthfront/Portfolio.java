@@ -22,15 +22,15 @@ public class Portfolio {
 
 
 
-        double total = price * quantity;
-
-        if (cash >= total)
-        {
-            cash -=total;
-            positions.add(new Stock(stock.tickerSymbol), quantity);
-            return true;
-
-        }
+//        double total = price * quantity;
+//
+//        if (cash >= total)
+//        {
+//            cash -=total;
+//            positions.add(new Stock(stock.tickerSymbol), quantity);
+//            return true;
+//
+//        }
         return false;
 
     }

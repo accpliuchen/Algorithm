@@ -4,14 +4,30 @@ package com.interview.questions.exercise2;
 public class Test {
 
 
-//    public String concatSwaps(String str,int[] sizes){
-//
-//        StringBuilder sb=new StringBuilder();
-//
-//        sb.append(str.)
-//
-//        return "";
-//    }
+    public String concatSwaps(String str,int[] sizes){
+
+        String output=new String();
+
+        String[] array=new String[sizes.length];
+
+        array[0]=str.substring(0,sizes[0]);
+        int value=sizes[0];
+
+        for(int i=1;i<sizes.length;i++){
+            value=value+sizes[i];
+            array[i]=str.substring(value-sizes[i],value);
+        }
+
+        for(int j=0;j<array.length;j=j+2){
+            if(j+1!=array.length)
+                output=output.toString()+array[j+1]+array[j];
+            else
+                output=output.toString()+array[j];
+        }
+
+        return output;
+
+    }
 
 
     public static void main(String args[]){
@@ -21,6 +37,8 @@ public class Test {
         String str="secondfirst";
         int[] sizes={6,5};
 
+
+        Test test=new Test();
 
         String output=new String();
 
@@ -32,10 +50,13 @@ public class Test {
         int value=sizes[0];
         for(int i=1;i<sizes.length;i++){
             value=value+sizes[i];
+//            System.out.println("value  is "+value);
+//            System.out.println("sizes[i]  is "+sizes[i]);
+
             array[i]=str.substring(value-sizes[i],value);
         }
 
-        System.out.println(array.length);
+//        System.out.println(array.length);
 
         for(int j=0;j<array.length;j=j+2){
            if((j+1)!=array.length)
@@ -46,15 +67,10 @@ public class Test {
 
         System.out.println(output.toString());
 
-//        while i<len(s):
-//        m.append(s[i:i+size[r]])
-//        i=i+size[r]
-//        r=r+1
-//        for i in range(0,len(m)-1,2):
-//        temp=m[i]
-//        m[i]=m[i+1]
-//        m[i+1]=temp
-//        res="".join(map(str,m))
 
+
+        System.out.println("=====================");
+
+        System.out.println(test.concatSwaps(str,sizes));
     }
 }
