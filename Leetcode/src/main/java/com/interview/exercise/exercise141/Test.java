@@ -69,21 +69,41 @@ public class Test {
 //        return true;
 //    }
 
-    public boolean hasCycle(ListNode head) {
-      if(head==null || head.next==null) return false;
+//    public boolean hasCycle(ListNode head) {
+//      if(head==null || head.next==null) return false;
+//
+//      ListNode slow=head;
+//      ListNode fast=head;
+//
+//      while(fast!=null && fast.next!=null){
+//            slow=slow.next;
+//            fast=fast.next.next;
+//
+//            if(slow==fast) return true;
+//      }
+//
+//      return false;
+//
+//    }
 
-      ListNode slow=head;
-      ListNode fast=head;
 
-      while(fast!=null && fast.next!=null){
+    public boolean hasCycle(ListNode head){
+        if(head==null || head.next==null) return false;
+
+        ListNode fast=head;
+        ListNode slow=head;
+
+        while(fast!=null && fast.next!=null) {
             slow=slow.next;
             fast=fast.next.next;
 
+            System.out.println("slow value is "+ slow.val);
+            System.out.println("fast value is "+ fast.val);
+
+            System.out.println("");
             if(slow==fast) return true;
-      }
-
-      return false;
-
+        }
+        return false;
     }
 
 
