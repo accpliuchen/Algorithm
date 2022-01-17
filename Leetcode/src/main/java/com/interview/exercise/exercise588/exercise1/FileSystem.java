@@ -65,9 +65,12 @@ public class FileSystem {
 
     public static void main(String[] args) {
         FileSystem obj = new FileSystem();
-        List<String> param_1 = obj.ls("e:\\");
-        obj.mkdir("e:\\");
-        obj.addContentToFile("e:\\a.txt","588 file system");
-        String param_4 = obj.readContentFromFile("e:\\a.txt");
+        List<String> param_1 = obj.ls("/");
+        obj.mkdir("/a/b/c");
+        obj.addContentToFile("/a/b/c/d","588 file system");
+        List<String> param_2 = obj.ls("/");
+        String param_4 = obj.readContentFromFile("/a/b/c/d");
+
+        System.out.println("");
     }
 }
