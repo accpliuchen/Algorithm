@@ -22,9 +22,9 @@ public class Test {
     }
 
     public static void main(String args[]){
-        //int[] nums=new int[]{1,2,0};
+        int[] nums=new int[]{1,2,0};
 
-        int[] nums=new int[]{3,4,-1,1};
+        //int[] nums=new int[]{3,4,-1,1};
 
         Test test=new Test();
 

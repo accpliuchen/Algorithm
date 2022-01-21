@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+//https://jerry4013.github.io/Github-blog/2020/08/03/LeetCode-588.html
 public class FileSystem {
     class Dir {
         HashMap< String, Dir > dirs = new HashMap < > ();
