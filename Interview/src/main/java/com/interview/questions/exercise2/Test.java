@@ -1,6 +1,7 @@
 package com.interview.questions.exercise2;
 
 //https://www.chegg.com/homework-help/questions-and-answers/codewriting-given-string-5-array-positive-integers-sizeswhere-sum-elements-sizes-equal-len-q83331883
+//https://www.chegg.com/homework-help/questions-and-answers/given-strings-array-positive-integers-sizes-sum-elements-sizes-equal-length-s-formally-siz-q83331720
 public class Test {
 
 
