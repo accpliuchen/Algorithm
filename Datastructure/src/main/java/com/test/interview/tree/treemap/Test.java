@@ -1,5 +1,6 @@
 package com.test.interview.tree.treemap;
 
+import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
@@ -35,6 +36,13 @@ public class Test {
         System.out.println("Ceiling key entry for 4: "+ treemap.ceilingKey(4)); //return 5
         System.out.println("Ceiling key entry for 5: "+ treemap.ceilingKey(5)); //return 5
         System.out.println("Ceiling key entry for 7: "+ treemap.ceilingKey(7)); //return null
+
+
+        Map<String,Integer> map=new TreeMap<>();
+        map.put("organe",1);
+        map.put("organe",1);
+        map.put("organe",1);
+
 
     }
 }
