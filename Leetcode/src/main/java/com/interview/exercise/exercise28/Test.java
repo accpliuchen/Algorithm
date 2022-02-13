@@ -10,6 +10,7 @@ public class Test {
         else{
             for(int i=0;i<haystack.length();i++){
                 String str=haystack.substring(i,i+needle.length());
+                System.out.println(str);
                 if(str.equals(needle)){
                     return i;
                 }
