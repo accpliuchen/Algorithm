@@ -1,7 +1,7 @@
 package com.interview.questions.exercise12.exercise1;
 
 //https://www.geeksforgeeks.org/reduce-the-string-by-removing-k-consecutive-identical-characters/
-
+//https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
 import java.util.Stack;
 
 class Pair{
