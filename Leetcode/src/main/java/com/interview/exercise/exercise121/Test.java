@@ -55,20 +55,37 @@ public class Test {
 //        return maxProfit;
 //    }
 
+//    public int maxProfit(int[] prices){
+//        if(prices==null || prices.length==0) return 0;
+//
+//        int max=0;
+//        int min=prices[0];
+//        for(int i=1;i<prices.length;i++){
+//
+//            max=Math.max(max,prices[i]-min);
+//            min=Math.min(min,prices[i]);
+//
+//            System.out.println("\n");
+//        }
+//        return max;
+//    }
+
+
+
     public int maxProfit(int[] prices){
         if(prices==null || prices.length==0) return 0;
 
         int max=0;
         int min=prices[0];
-        for(int i=1;i<prices.length;i++){
 
+        for(int i=1;i<prices.length;i++){
             max=Math.max(max,prices[i]-min);
             min=Math.min(min,prices[i]);
-
-            System.out.println("\n");
         }
+
         return max;
     }
+
 
     public static void main(String args[]){
         int[] prices=new int[]{7,1,5,3,6,4};
