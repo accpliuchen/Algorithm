@@ -49,6 +49,7 @@ class RandomizedSet {
 
 
    public int getRandom(){
+       System.out.println(maps.size());
        return  list.get(random.nextInt(maps.size()));
    }
 }

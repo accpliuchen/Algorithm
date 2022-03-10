@@ -1,5 +1,7 @@
 package com.interview.exercise.exercise876;
 
+import java.util.Stack;
+
 class ListNode {
     int value;
     ListNode next;
@@ -29,6 +31,25 @@ public class Test {
 
         return slow;
     }
+
+    public int[] reversePrint(ListNode head){
+        Stack<ListNode> stack = new Stack<ListNode>();
+        ListNode temp = head;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+        int size = stack.size();
+        int[] print = new int[size];
+        for (int i = 0; i < size; i++) {
+            print[i] = stack.pop().value;
+        }
+        return print;
+
+
+    }
+
+
 
     public static void main(String[] args) {
         ListNode root=new ListNode(1);
