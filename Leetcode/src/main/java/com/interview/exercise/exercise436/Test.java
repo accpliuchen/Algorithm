@@ -31,5 +31,12 @@ public class Test {
     public static void main(String[] args) {
         int[][] intervals= {{3,4},{2,3},{1,2}};
 
+
+        Test test=new Test();
+        int[] array=test.findRightInterval(intervals);
+
+        for(int nums:array)
+            System.out.println(nums);
+
     }
 }
