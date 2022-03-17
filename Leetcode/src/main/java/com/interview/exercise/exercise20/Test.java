@@ -30,7 +30,9 @@ public class Test {
 //        String s="([)]";
 //        String s="([";
 
-        String s="[[{}]()](";
+//        String s="[[{}]()](";
+
+        String s="()";
 
         Test test=new Test();
         boolean result=test.isValid(s);
