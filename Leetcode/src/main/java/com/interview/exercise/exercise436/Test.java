@@ -16,6 +16,7 @@ public class Test {
         }
 
         for(int i=0;i<n;i++){
+            System.out.println(intervals[i][1]);
             Integer key=map.ceilingKey(intervals[i][1]);
 
             if(key==null){
@@ -29,7 +30,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        int[][] intervals= {{3,4},{2,3},{1,2}};
+//        int[][] intervals= {{3,4},{2,3},{1,2}};
+        int[][] intervals= {{1,4},{2,3},{3,4}};
 
 
         Test test=new Test();
