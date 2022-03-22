@@ -54,12 +54,19 @@ public class Test {
 
     public static  void main(String args[]){
 
-        String path="/home/";
+//        String path="/home/";
+
+        String path="/../";
 
         Test test=new Test();
         String result=test.simplifyPath(path);
 
 
         System.out.println("result value "+ result);
+
+        String paths="/home/";
+
+        String[] ass=path.split("/");
+        System.out.println(ass.length);
     }
 }

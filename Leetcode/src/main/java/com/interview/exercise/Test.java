@@ -1,5 +1,7 @@
 package com.interview.exercise;
 
+import java.util.List;
+
 /**
  Input: a string and an integer N
 
