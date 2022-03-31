@@ -43,5 +43,9 @@ public class Test {
         for(Integer nums:result){
             System.out.println(nums);
         }
+
+
+        char c='b';
+        System.out.println(c-'a');
     }
 }
