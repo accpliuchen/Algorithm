@@ -1,0 +1,17 @@
+The current selected programming language is Java We emphasize the secondo correct but efficient code. Once submitted, you cannot reden this problem again. You can use System.out.println in your code. The System.out.println() may not work in case of Syntaruntime erros. The con JDK eng
+Note: The main class name must be “Solution” A company has a sales record of N products for M days. The company wishes to know the maximum revenue a given product of the N products each day. Write an algorithm to find the highest revenue received each
+Input:
+The first line of the input consists of two space-separated Integers days and produces, representing the day products in the sales record (N), respectively, The next M lines consist of N space separated integers – sales Record representing the grid of sales revenue or negative) received from each product each day,
+Output:
+Print M space-separated integers representing the maximum revenue received each day.
+Example:
+Input:
+34
+100 198 333 323
+122 232 221 111
+223 565 245 764
+Output:
+333 232 764
+Explanation:
+The maximum revenue received on the first day is 333, followed by a maximum revenue of 232 on the
+maximum revenue of 764 on the third day.

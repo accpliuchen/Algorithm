@@ -20,28 +20,53 @@ class ListNode{
 
 public class Test {
 
+//    public ListNode reverseList(ListNode head){
+//        if(head==null)
+//            return null;
+//
+//        List<Integer> values=new ArrayList<>();
+//        while(head!=null){
+//            values.add(head.val);
+//            head=head.next;
+//        }
+//
+//        Collections.reverse(values);
+//        return node(values);
+//    }
+//
+//    public ListNode node(List<Integer> list){
+//        int x=list.remove(0).intValue();
+//        if(list.size()==0){
+//            return new ListNode(x);
+//        }else{
+//            return new ListNode(x,node(list));
+//        }
+//    }
+
+//    public ListNode reverseList(ListNode head){
+//        if(head==null || head.next==null) return head;
+//
+//        ListNode prevPart=reverseList(head.next);
+//
+//        head.next.next=head;
+//        head.next=null;
+//
+//        return  prevPart;
+//    }
+
     public ListNode reverseList(ListNode head){
-        if(head==null)
-            return null;
+        ListNode curr=head,prev=null,temp=null;
 
-        List<Integer> values=new ArrayList<>();
-        while(head!=null){
-            values.add(head.val);
-            head=head.next;
+        while(curr!=null){
+            temp=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=temp;
         }
-
-        Collections.reverse(values);
-        return node(values);
+        return prev;
     }
 
-    public ListNode node(List<Integer> list){
-        int x=list.remove(0).intValue();
-        if(list.size()==0){
-            return new ListNode(x);
-        }else{
-            return new ListNode(x,node(list));
-        }
-    }
+
 
 
     public static void main(String args[]){

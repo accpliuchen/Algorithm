@@ -1,0 +1,2 @@
+Create classes for the following scenario using a Factory Design Pattern:
+A  ToasterFactory class creates Toaster instances. A  Toaster has two or four slots. There are two kinds of slots: wide and regular.

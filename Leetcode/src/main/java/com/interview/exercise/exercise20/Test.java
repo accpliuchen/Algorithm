@@ -26,11 +26,17 @@ public class Test {
     }
 
     public static void main(String args[]){
-        String s="(])";
+        //String s="{[]}";
+//        String s="([)]";
+//        String s="([";
+
+//        String s="[[{}]()](";
+
+        String s="()";
 
         Test test=new Test();
         boolean result=test.isValid(s);
 
-        System.out.println(result);
+        System.out.println("result value is "+result);
     }
 }

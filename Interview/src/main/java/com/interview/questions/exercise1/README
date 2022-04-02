@@ -1,0 +1,6 @@
+You're given an array of integers a . Let's call (a[i - 1],
+a[i], a[i + 1]) a good tuple, if exactly 2 out of the 3
+numbers in it are equal. For example, (2, 1, 2) is a good
+tuple, but (1, 1, 1) and (1, 2, 3) are not.
+
+Your task is to return the number of good tuples in a

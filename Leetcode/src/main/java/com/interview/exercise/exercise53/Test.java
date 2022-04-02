@@ -44,21 +44,62 @@ public class Test {
 //
 //    }
 
-    public int maxSubArray(int[] nums) {
-        int res=Integer.MIN_VALUE,curSum=0;
+//    public int maxSubArray(int[] nums) {
+//        int res=Integer.MIN_VALUE,curSum=0;
+//
+//        for(int num:nums){
+//            curSum=Math.max(curSum+num,num);
+//            res=Math.max(res,curSum);
+//        }
+//
+//        return  res;
+//
+//    }
 
-        for(int num:nums){
-            curSum=Math.max(curSum+num,num);
-            res=Math.max(res,curSum);
+//    public int maxSubArray(int[] nums) {
+//        if(nums==null || nums.length==0)
+//            return Integer.MIN_VALUE;
+//
+//        int[] opt=new int[nums.length];
+//        opt[0]=nums[0];
+//        int max=opt[0];
+//
+//        for(int i=1;i<nums.length;i++){
+//            int temp=opt[i-1]+nums[i];
+//
+//            if(temp>nums[i])
+//                opt[i]=temp;
+//            else
+//                opt[i]=nums[i];
+//
+//
+//            if(max<opt[i]){
+//                max=opt[i];
+//            }
+//
+//        }
+//
+//        return max;
+//    }
+
+
+    public int maxSubArray(int[] nums){
+        int result=nums[0];
+        int sum=nums[0];
+
+        for(int i=1;i<nums.length;i++){
+            sum=Math.max(nums[i],sum+nums[i]);
+            result=Math.max(result,sum);
         }
 
-        return  res;
-
+        return result;
     }
 
 
     public static void main(String args[]){
-        int[] nums={-2,1,-3,4,-1,2,1,-5,4};
+//        int[] nums={-2,1,-3,4,-1,2,1,-5,4};
+
+        int[] nums={5,4,-1,7,8};
 
         Test test=new Test();
         int result=test.maxSubArray(nums);

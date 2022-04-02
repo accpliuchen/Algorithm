@@ -1,0 +1,128 @@
+Anagrams
+
+An anagram is a word made by rearranging the letters of another word. For example, the English words dearer, reader, reared, and reread are anagrams of each other, and so are present, repents, and serpent. For this project, you will write a Java program that finds all sets of anagrams in a text file of English words. Your program will use an algorithm based on binary search trees, so it will be very fast.
+
+1. Understanding
+
+We’ll start by considering why the obvious algorithms for this problem are too slow to work. Suppose we read all the words from a file, and then compare each word with every other word, testing if the two words are anagrams. Although this algorithm would indeed find all the anagrams among these words, it is very inefficient. If there are N words, then it requires O(N²) time: too slow for large files. For example, if War and Peace has 5 × 10⁵ words, then we might need 2.5 × 10¹¹ tests to find all its anagrams.
+      We also need a way to test if each pair of words are anagrams. We might generate all possible rearrangements of one word, then test if one of them is equal to the other word. Unfortunately, if a word has w letters, then it can have at most w! distinct rearrangements, so comparing words this way takes O(w!) time: too slow for long words. For example, if a word has 10 letters, then we might test 10! = 3,628,800 rearrangements.
+      We conclude that we can’t compare each word with every other word, and we can’t compare words by rearranging their letters. We can avoid both these limitations by using a version of the K-and-R string comparison algorithm discussed in the lectures, and by using binary search trees. Here’s how to do that.
+
+Summaries. Suppose that a word is a string of one or more lower case Roman letters a through z, without accents, blanks, or punctuation marks. Also suppose that the letter a corresponds to 0, that b corresponds to 1, etc., up to z that corresponds to 25. (These are not the ASCII or Unicode codes for those letters!) For each word, we make an array of 26 integers, called a summary of that word. In the summary, the element at index k tells how many times the letter corresponding to k appears in the word. For example, if we have the word present, then its summary looks like this, where the large numbers are array elements, and the small numbers are array indexes. Note that present has two e’s (at index 4), one n (at index 13), one p (at index 15), one r (at index 17), one s (at index 18), and one t (at index 19).
+
+0
+
+0
+
+0
+
+0
+
+2
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+0
+
+1
+
+0
+
+1
+
+1
+
+1
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+₀
+
+₁
+
+₂
+
+₃
+
+₄
+
+₅
+
+₆
+
+₇
+
+₈
+
+₉
+
+₁₀
+
+₁₁
+
+₁₂
+
+₁₃
+
+₁₄
+
+₁₅
+
+₁₆
+
+₁₇
+
+₁₈
+
+₁₉
+
+₂₀
+
+₂₁
+
+₂₂
+
+₂₃
+
+₂₄
+
+₂₅
+
+Now, two words are anagrams if and only if their summaries are equal. For example, repents and serpent have the same summary as present. To test if two words are anagrams, we construct summaries for both words, then test their summaries for equality. We can construct a summary of a word with w letters in O(w) time, and we can test two summaries for equality in O(26) = O(1) time. As a result, we can test if two words are anagrams in linear time.
+
+Comparing summaries. We can also test summaries S₁ and S₂ using a version of the K-and-R algorithm. It visits the elements of S₁ and S₂ one at a time, from left to right, until it finds the first pair of unequal elements. Then it subtracts the element of S₂ from the element of S₁ and returns their difference. If it never finds unequal elements, then it returns 0. In either case, if the returned difference is less than 0, then S₁ < S₂; if it is equal to 0, then S₁ = S₂; if it is greater than 0, then S₁ > S₂.
+
+Anagram trees. Because of the K-and-R algorithm, summaries are totally ordered, so we can use them as keys in a binary search tree. We’ll call it an anagram tree. The anagram tree’s keys are summaries, and its values are linear singly linked lists of strings, in which each string represents a word. The anagram tree is the basis for our efficient anagram finding program.
+      Here’s how the program works. We start with an empty anagram tree. Then we read words as strings from a text file. Every time we read a word, we construct its summary. Then we search for a node in the tree that has the summary as its key, using the K-and-R algorithm to control the search. If we find the node, then we add the word to the node’s list (if it’s not already there). If we don’t find the node, then we add a new node to the list. The new node’s key is the summary, and its value is a list that contains the word.
+      After we’ve read all the words, there will be many nodes in the anagram tree, each with a list of one or more words. The words in each list are anagrams of each other, because they all have the same summary. We then traverse the tree, visiting each node. If we find a node whose list has only one word, then we ignore it, because that word is an anagram of only itself. However, if we find a node whose list has two or more words, then we print those words, because they are anagrams of each other.
+      Suppose the program reads N words. If we assume the words are read in random order, then it takes O(log N) time to add a word to the anagram tree. Since we add N words, it takes O(N log N) time to build the entire tree. Since the tree has N nodes, it takes O(N) time to traverse it. As a result, the program runs in O((N log N) + N) = O(N log N) time.
+
+3. Implementation.
+
+Here’s how to write the program. You must use the Java class Words to read words from a text file. Java source code for Words is available on Moodle. You don’t have to write it yourself. You don’t even have to know how it works internally. All you need to know is that it acts like an iterator, and that it has the following public methods.

@@ -1,0 +1,38 @@
+Given an empty array that should contain integers numbers, your task is to process a list of queries on it. Specifically, there are two types of queries:
+
+"+x" - add number x to numbers.
+"-x" - remove all the instances of number x from numbers
+After processing each query, record the number of pairs in numbers with a difference equal to a given diff. The final output should be an array of such values for all queries.
+
+Notes:
+
+All numbers in queries are guaranteed to be in the range of [-109, 109]. It is also guaranteed that for every "-x" query, the specified number x exists in numbers.
+It is guaranteed that the answer for each query fits into a 32-bit integer type.
+Example
+
+For queries = ["+4", "+5", "+2", "-4"] and diff = 1, the output should be solution(queries, diff) = [0, 1, 1, 0].
+First, process queries[0] = "+4" and add 4 to numbers, resulting in numbers = [4]. There are no pairs with diff = 1, so append 0 to the output.
+Next, process queries[1] = "+5" and add 5 to numbers, resulting in numbers = [4, 5]. The numbers 4 and 5 have difference diff = 1, so append 1 to the output.
+Process queries[2] = "+2" and add 2 to numbers, resulting in numbers = [4, 5, 2]. The number of pairs with difference diff = 1 remains the same, so append 1 to the result.
+Process queries[3] = "-4" and remove all instances of number 4, resulting in numbers = [5, 2]. There is no pair with difference diff = 1, so append 0 to the output.
+Finally, the output is [0, 1, 1, 0].
+For queries = ["+2", "+2", "+4", "+3", "-2"] and diff = 1, the output should be solution(queries, diff) = [0, 0, 0, 3, 1].
+First, process queries[0] = "+2" and add 2 to numbers, resulting in numbers = [2]. There are no pairs with diff = 1, so append 0 to the output.
+Process queries[1] = "+2" and add 2 to numbers, resulting in numbers = [2, 2]. There is no pair with difference diff = 1, so append 0 to the output.
+Process queries[2] = "+4" and add 4 to numbers, resulting in numbers = [2, 2, 4]. There is no pair with difference diff = 1, so append 0 to the output.
+Process queries[3] = "+3" and add 3 to numbers, resulting in numbers = [2, 2, 4, 3]. There are 3 pairs with diff = 1 - (2, 3), (2, 3), and (4, 3), so append 3 to the output.
+Process queries[4] = "-2" and remove all instances of 2, resulting in numbers = [4, 3]. Now, there is only a single pair (4, 3) with diff = 1, so append 1 to the output.
+The final output is [0, 0, 0, 3, 1].
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+[input] array.string queries
+An array of strings representing queries in the format described above. It is guaranteed that all added and removed numbers are in the range of -109, 109. It is also guaranteed that for every removal query, the removed number exists in the current numbers array.
+Guaranteed constraints:
+1 ≤ queries.length ≤ 105.
+[input] integer diff
+A positive integer value representing the expected difference in pairs of numbers.
+Guaranteed constraints:
+1 ≤ diff ≤ 109.
+[output] array.integer
+After processing each query, record the number of pairs in numbers with a difference equal to diff. It is guaranteed that the number will always fit into a 32-bit integer type. Return an array of such values for all queries.
