@@ -42,7 +42,7 @@ public class Test {
 
     public static void main(String args[]){
         int[] nums={1,1,1,2,2,3};
-        int k=3;
+        int k=2;
 
         Test test=new Test();
         int[] result=test.topKFrequent(nums,k);

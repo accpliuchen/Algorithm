@@ -1,0 +1,1 @@
+find second smallest Number in an Array
