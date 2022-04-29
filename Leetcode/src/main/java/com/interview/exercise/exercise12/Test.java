@@ -62,6 +62,6 @@ public class Test {
         int num=3;
 
         Test test=new Test();
-        System.out.print(test.intoRoman(3));
+        System.out.print(test.intToRoman(3));
     }
 }
