@@ -23,6 +23,18 @@ public class Test {
         return stack;
     }
 
+    public static Stack<Integer> stackSorting(Stack<Integer> stack) {
+        Stack<Integer> t = new Stack<>();
+        while(!stack.isEmpty()) {
+            int item = stack.pop();
+            while(!t.isEmpty() && t.peek() > item) stack.push(t.pop());
+            t.push(item);
+        }
+        while(!t.isEmpty()) stack.push(t.pop());
+
+        return stack;
+    }
+
     public static void main(String args[]){
 
         Stack<Integer> stack=new Stack<>();
@@ -31,7 +43,7 @@ public class Test {
         stack.push(7);
         stack.push(5);
 
-        Stack<Integer> item=Test.sortStackByStack(stack);
+        Stack<Integer> item=Test.stackSorting(stack);
 
         for(Integer items:item){
             System.out.println(items);
