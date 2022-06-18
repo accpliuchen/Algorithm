@@ -36,14 +36,19 @@ public class Test {
 
         for(int i=0;i<size;i++){
             if(i%2==0){
-                System.out.println(deque.peekFirst());
-                System.out.println(deque.pollFirst());
+                System.out.println(deque.peekFirst());// 3 2 1
+                System.out.println(deque.pollFirst());// 3 2 1
             }else{
-                System.out.println(deque.peekLast());
-                System.out.println(deque.pollFirst());
+                System.out.println(deque.peekLast());// 6 5 4
+                System.out.println(deque.pollLast());// 6 5 4
             }
         }
 
+        System.out.println(deque.peekFirst());//null
+        System.out.println(deque.pollFirst());
+
+        System.out.println(deque.peekLast());
+        System.out.println(deque.pollLast());
     }
 }
 
