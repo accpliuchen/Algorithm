@@ -17,7 +17,7 @@
       <module name="Algorithm" target="8" />
       <module name="Datastructure" target="8" />
       <module name="Interview" target="8" />
-      <module name="Laioffer" target="17" />
+      <module name="Laioffer" target="16" />
       <module name="Leetcode" target="8" />
       <module name="Sort" target="8" />
     </bytecodeTargetLevel>
