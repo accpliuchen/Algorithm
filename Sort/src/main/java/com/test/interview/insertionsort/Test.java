@@ -11,6 +11,7 @@ public class Test {
             for(int j=i;j>0;j--){
               if(array[j]<=array[j-1]){
                   swap(array,j,j-1);
+                  printArray(array);
               }
             }
         }
@@ -39,9 +40,13 @@ public class Test {
 //            arr[index+1]=temp;
 //        }
 
+        System.out.println("before");
+        printArray(arr);
+
         Test test=new Test();
         test.insertionSort(arr);
 
+        System.out.println("after");
         printArray(arr);
 
     }
@@ -49,7 +54,9 @@ public class Test {
 
     public static void printArray(int[] arrays){
         for(int i=0;i<arrays.length;i++){
-            System.out.println(arrays[i]);
+            System.out.print(arrays[i]+" ");
         }
+
+        System.out.println();
     }
 }
