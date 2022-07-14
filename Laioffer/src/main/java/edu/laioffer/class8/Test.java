@@ -12,18 +12,17 @@ public class Test {
         }
 
         char[] array=input.toCharArray();
-        Deque<Character> stack=new ArrayDeque();
+        Deque<Character> stack=new ArrayDeque<>();
         int fast=0;
         
         while(fast<array.length){
             char curChar=array[fast];
 
-            if(!stack.isEmpty() && stack.peekLast()==curChar){
+            if(!stack.isEmpty() && stack.peekFirst()==curChar){
                 while(fast<array.length &&  array[fast]==curChar){
                     fast++;
                 }
-                //stack.pollLast();
-                break;
+                stack.pollFirst();
             }else{
                 stack.offerFirst(curChar);
                 fast++;
