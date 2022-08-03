@@ -7,7 +7,10 @@ public class Test {
 		if(t.length()==0) return false;
 
 		int letter=0;
-
+   
+	    //ahbgdc	t
+	    //abc       s
+	    
 		for(int i=0;i<t.length();i++){
 		   if(s.charAt(letter)==t.charAt(i)){
 		   	letter++;

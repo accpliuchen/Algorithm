@@ -27,6 +27,7 @@ public class Test{
     public static void main(String args[]){
         Test test=new Test();
 
+        //9-2=7  map 2,0
         int[] nums={2, 7, 11, 15};
         int target=9;
 
