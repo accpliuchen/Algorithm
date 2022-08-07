@@ -22,7 +22,7 @@ public class Test {
         		if(source.charAt(i-1)==target.charAt(j-1)){
         			same[i][j]=same[i-1][j-1]+1;
         		}else{
-        			same[i][j]=Math.max(same[i][j],same[i][j-1]);
+        			same[i][j]=Math.max(same[i-1][j],same[i][j-1]);
         		}
         	}
         }
