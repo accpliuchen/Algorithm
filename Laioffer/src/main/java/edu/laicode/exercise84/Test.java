@@ -28,7 +28,9 @@ public class Test {
 			reverse(array,start,fast-1); //Google
 
 			while(start!=fast){
-				array[end++]=array[start++];
+				//array[end++]=array[start++];
+				start++;
+				end++;
 			}
 
 			while(fast<array.length && array[fast]==' '){

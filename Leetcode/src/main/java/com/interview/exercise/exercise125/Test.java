@@ -1,7 +1,5 @@
 package com.interview.exercise.exercise125;
 
-import java.util.Locale;
-
 public class Test {
 //    public boolean isPalindrome(String s) {
 //        s = s.toLowerCase().replaceAll("[^a-z0-9" +"]+","");
@@ -44,8 +42,8 @@ public class Test {
     }
 
     public static void main(String args[]){
-        String str="A man, a plan, a canal: Panama";
-        //String str="race a car";
+        //String str="A man, a plan, a canal: Panama";
+        String str="race a car";
 
         Test test=new Test();
 
