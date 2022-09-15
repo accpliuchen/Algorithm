@@ -60,6 +60,8 @@ public class Test {
     }
 
 	public static void main(String args[]){
+//		String str="I love Google";
+
 		String str="I love Google";
 
 		Test test=new Test();

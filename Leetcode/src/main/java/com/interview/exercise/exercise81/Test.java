@@ -33,7 +33,10 @@ public class Test {
 
     public static void main(String args[]){
 //        int[] nums={2,5,6,7,0,1,1};
-        int[] nums={2,5,6,7,0,3,3,3};
+//        int[] nums={2,5,6,7,0,3,3,3};
+//        int target =3;
+
+        int[] nums={2,5,6,0,0,1,2};
         int target =3;
 
         Test test=new Test();
