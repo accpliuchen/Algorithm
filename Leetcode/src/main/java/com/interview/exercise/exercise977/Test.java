@@ -29,5 +29,11 @@ public class Test {
         int[] nums = new int[]{-4,-1,0,3,10};
 
         Test test=new Test();
+
+        int[] array=test.sortedSquares(nums);
+
+        for(int num:array){
+            System.out.println(num);
+        }
     }
 }
