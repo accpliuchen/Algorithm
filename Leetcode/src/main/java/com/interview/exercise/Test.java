@@ -1,6 +1,7 @@
 package com.interview.exercise;
 
-import java.util.List;
+import java.io.IOException;
+import java.util.*;
 
 /**
  Input: a string and an integer N
@@ -70,11 +71,35 @@ public class Test {
         return result.toString();
     }
 
-    public static void main(String[] args) {
-        Test test=new Test();
-//        String result=test.reverseWrods("uevndvd");
-        String result=test.reverseWords(3,"You are having fun coding Java today");
+    class Main extends  Exception{
+        String i1;
+        Main(String i2){
+            i1=i2;
+        }
+        public String toString(){
+            return ("My Exception defineds:"+i1);
+        }
+    }
 
-        System.out.println(result);
+    public static void main(String[] args) {
+//        Test test=new Test();
+////        String result=test.reverseWrods("uevndvd");
+//        String result=test.reverseWords(3,"You are having fun coding Java today");
+//
+//
+
+//        ArrayList<String> strings=new ArrayList<String>();
+//        strings.add("aAaA");
+//        strings.add("AaA");
+//        strings.add("aAa");
+//        strings.add("AAaa");
+//
+//        Collections.sort(strings);
+//        for(String s:strings){
+//            System.out.println(s);
+//        }
+
+
+
     }
 }

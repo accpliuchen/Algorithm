@@ -19,7 +19,7 @@ class TreeNode{
 	}
 }
 
-public class Test {
+public class  Test {
 
     public TreeNode addOneRow(TreeNode root,int val,int depth){
     	if(depth==1){

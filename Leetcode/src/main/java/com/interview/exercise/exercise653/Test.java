@@ -26,7 +26,7 @@ class TreeNode{
 	}
 }
 
-public class Test {
+public class  Test {
 
 	public boolean findTarget(TreeNode root,int k){
 		Set<Integer> set=new HashSet();
@@ -66,7 +66,7 @@ public class Test {
 
 
 		Test test=new Test();
-        boolean result=test.findTarget(root,28);
+        boolean result=test.findTarget(root,9);
 
         System.out.println("result value is "+ result);
 

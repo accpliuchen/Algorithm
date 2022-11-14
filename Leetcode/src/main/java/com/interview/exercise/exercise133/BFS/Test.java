@@ -1,6 +1,12 @@
-package com.interview.exercise.exercise133;
+package com.interview.exercise.exercise133.BFS;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Queue;
+import java.util.LinkedList;
 
 class Node {
     public int val;
@@ -39,38 +45,13 @@ class Node {
     }
 }
 
+//https://leetcode.com/problems/clone-graph/discuss/993158/Java-BFS-with-test-cases
 public class Test {
-
-//    private HashMap <Node, Node> visited = new HashMap <> ();
-//    public Node cloneGraph(Node node) {
-//        if (node == null) {
-//            return node;
-//        }
-//
-//        // If the node was already visited before.
-//        // Return the clone from the visited dictionary.
-//        if (visited.containsKey(node)) {
-//            return visited.get(node);
-//        }
-//
-//        // Create a clone for the given node.
-//        // Note that we don't have cloned neighbors as of now, hence [].
-//        Node cloneNode = new Node(node.val, new ArrayList());
-//        // The key is original node and value being the clone node.
-//        visited.put(node, cloneNode);
-//
-//        // Iterate through the neighbors to generate their clones
-//        // and prepare a list of cloned neighbors to be added to the cloned node.
-//        for (Node neighbours: node.neighbors) {
-//            cloneNode.neighbors.add(cloneGraph(neighbours));
-//        }
-//        return cloneNode;
-//    }
 
     public Node cloneGraph(Node node){
         if(node==null) return null;
 
-        Map<Node,Node> map=new HashMap<>();
+        Map<Node, Node> map=new HashMap<>();
 
         Node newNode=new Node(node.val,new ArrayList<>());
         map.put(node,newNode);
@@ -85,7 +66,9 @@ public class Test {
                     map.put(nei,new Node(nei.val,new ArrayList<>()));
                     queue.add(nei);
                 }
-                map.get(cur).neighbors.add(map.get(nei));
+                Node temp=map.get(nei);
+                Node tempcur=cur;
+                map.get(cur).neighbors.add(temp);
             }
         }
 
@@ -104,10 +87,12 @@ public class Test {
         node3.setNeighbors(Arrays.asList(node4, node2));
         node4.setNeighbors(Arrays.asList(node1, node3));
 
-//         Test test=new Test();
         Test test=new Test();
-         Node node=test.cloneGraph(node1);
+        Node result=test.cloneGraph(node1);
 
-        System.out.println("===");
+
+
+
+        System.out.println("result value is "+result);
 	}
 }

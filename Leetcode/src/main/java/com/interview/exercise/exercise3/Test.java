@@ -2,6 +2,7 @@ package com.interview.exercise.exercise3;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Set;
 import java.util.HashSet;
 
 public class Test {
@@ -62,25 +63,54 @@ public class Test {
 //    }
 
 
-    public int lengthOfLongestSubstring(String s) {
-        if(s==null || s.length()==0) return 0;
+//    public int lengthOfLongestSubstring(String s) {
+//        if(s==null || s.length()==0) return 0;
+//
+//        HashMap<Character,Integer> map=new HashMap<>();
+//        int res=0;
+//        for(int i=0,j=0;i<s.length();i++){
+//            if(map.containsKey(s.charAt(i))){
+//                j=Math.max(map.get(s.charAt(i))+1,j);
+//            }
+//            map.put(s.charAt(i),i);
+//            res=Math.max(res,i-j+1);
+//        }
+//
+//        return res;
+//    }
 
-        HashMap<Character,Integer> map=new HashMap<>();
-        int res=0;
-        for(int i=0,j=0;i<s.length();i++){
-            if(map.containsKey(s.charAt(i))){
-                j=Math.max(map.get(s.charAt(i))+1,j);
-            }
-            map.put(s.charAt(i),i);
-            res=Math.max(res,i-j+1);
+     public int lengthOfLongestSubstring(String s) {
+        if(s==null || s.length()==0){
+            return 0;
         }
-
-        return res;
+        
+        int maxCnt=0;
+        int fast=0;
+        int slow=0;
+        
+        Set<Character> set=new HashSet<>();
+        
+        while(fast<s.length()){
+            char chS=s.charAt(fast);
+            
+            if(set.contains(chS)){
+                char chF=s.charAt(slow);
+                set.remove(chF);
+                slow++;
+                
+            }else{
+                set.add(chS);
+                maxCnt=Math.max(maxCnt,set.size());
+                fast++;
+            }
+        }
+        
+        return maxCnt;
     }
 
     public static void main(String args[]){
         //String str="bbbbb";
-        String str="pwwkew";
+        String str="bbbbb";
 
         Test test=new Test();
         int result=test.lengthOfLongestSubstring(str);
