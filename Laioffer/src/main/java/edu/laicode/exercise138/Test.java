@@ -47,11 +47,13 @@ public class Test {
 
     
 	public static void main(String args[]){
-		TreeNode root=new TreeNode(-15);
-		root.left=new TreeNode(2);
-		root.right=new TreeNode(11);
-		root.right.left=new TreeNode(6);
-		root.right.right=new TreeNode(14);
+//		TreeNode root=new TreeNode(-15);
+//		root.left=new TreeNode(2);
+//		root.right=new TreeNode(11);
+//		root.right.left=new TreeNode(6);
+//		root.right.right=new TreeNode(14);
+
+		TreeNode root=new TreeNode(0);
 
 		Test test=new Test();
 		int result=test.maxPathSum(root);
