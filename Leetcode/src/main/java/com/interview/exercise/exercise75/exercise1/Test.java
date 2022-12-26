@@ -36,7 +36,7 @@ public class Test {
     }
 
     public static void main(String args[]){
-        int[] num={2,1,0,3,2,0,1,3};
+        int[] num={2,0,2,1,1,0};
 
         Test test=new Test();
         test.sortColors(num);

@@ -81,8 +81,57 @@ public class Test {
         }
     }
 
+
+    private static int getAns(int[] arr,int currentIndex,int target,int[][] dp){
+        if(target==0) return 0;
+        if(currentIndex==arr.length) return -1;
+        if(arr[currentIndex]==0) return getAns(arr,currentIndex+1,target,dp);
+        if(dp[target][currentIndex]!=-2) return dp[target][currentIndex];
+
+        int ans=Integer.MAX_VALUE;
+        int currentCount=0;
+
+        while(currentCount*arr[currentIndex]<=target){
+            int leftCount=getAns(arr,currentIndex+1,target-currentCount*arr[currentIndex],dp);
+
+            if(leftCount!=-1){
+                ans=Math.min(ans,leftCount+currentCount);
+                System.out.println(ans);
+            }
+            currentCount++;
+        }
+
+        if(ans==Integer.MAX_VALUE) return dp[target][currentIndex]=-1;
+        return dp[target][currentIndex]=ans;
+    }
+
+    public static int getMinCount(int[] arr,int k){
+        int[][] dp=new int[k+1][arr.length+1];
+        int s=dp.length;
+        for(int i=0;i<dp.length;i++){
+            Arrays.fill(dp[i],-2);
+        }
+//        System.out.println(arr.length);
+//        System.out.println(dp.length);
+
+        
+        int ans=getAns(arr,0,k,dp);
+        return ans;
+    }
+
     public static void main(String[] args) {
-//        Test test=new Test();
+
+
+        Test test=new Test();
+
+//        int[] array=new int[]{1,14,30,17};
+//        int result=test.getMinCount(array,68);
+
+        int[] array=new int[]{1,5,12};
+        int result=test.getMinCount(array,13);
+
+        //System.out.println(result);
+
 ////        String result=test.reverseWrods("uevndvd");
 //        String result=test.reverseWords(3,"You are having fun coding Java today");
 //
@@ -97,7 +146,8 @@ public class Test {
 //        Collections.sort(strings);
 //        for(String s:strings){
 //            System.out.println(s);
-//        }
+//        
+
 
 
 

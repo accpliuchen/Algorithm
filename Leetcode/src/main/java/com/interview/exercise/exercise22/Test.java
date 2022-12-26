@@ -46,10 +46,10 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        int n=3;
+        int n=2;
         Test test=new Test();
         List<String> result=test.generateParenthesis(n);
 
-        System.out.println("");
+        System.out.println(result);
     }
 }

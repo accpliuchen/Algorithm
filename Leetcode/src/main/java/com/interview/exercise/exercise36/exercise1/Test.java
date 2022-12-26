@@ -7,30 +7,69 @@ public class Test {
 
 	public boolean inValidSudoku(char[][] board) {
 
-        for (int i = 0; i < board.length; i++) {
-            Set<Character> rowsSet = new HashSet();
-            Set<Character> colsSet = new HashSet();
-            Set<Character> cubeSet = new HashSet();
+        // for (int i = 0; i < board.length; i++) {
+        //     Set<Character> rowsSet = new HashSet();
+        //     Set<Character> colsSet = new HashSet();
+        //     Set<Character> cubeSet = new HashSet();
 
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] != '.' && !rowsSet.add(board[i][j])) return false;
-                if (board[j][i] != '.' && !colsSet.add(board[j][i])) return false;
+        //     for (int j = 0; j < board[0].length; j++) {
+        //         if (board[i][j] != '.' && !rowsSet.add(board[i][j])) return false;
+        //         if (board[j][i] != '.' && !colsSet.add(board[j][i])) return false;
 
-                //System.out.println(i/3);
+        //         //System.out.println(i/3);
 
-                int rowIndex = 3 * (i / 3);
-                int colIndex = 3 * (i % 3);
+        //         int rowIndex = 3 * (i / 3);
+        //         int colIndex = 3 * (i % 3);
+
+        //         System.out.println("rowIndex value is " + rowIndex);
+        //         System.out.println("colIndex value is " + colIndex);
+
+
+        //         if (board[rowIndex + j / 3][colIndex + j % 3] != '.' && !cubeSet.add(board[rowIndex + j / 3][colIndex + j % 3]))
+        //             return false;
+
+        //     }
+        // }
+
+        // return true;
+
+        for(int i=0;i<board.length;i++){
+            HashSet<Character> rows=new HashSet<>();
+            HashSet<Character> cols=new HashSet<>();
+            HashSet<Character> cube=new HashSet<>();
+            
+            for(int j=0;j<board[0].length;j++){
+                
+                if(board[i][j]!='.' && !rows.add(board[i][j])) return false;
+                if(board[j][i]!='.' && !cols.add(board[j][i])) return false;
+                
+                int rowIndex=3*(i/3);
+                int colIndex=3*(i%3);
+
 
                 System.out.println("rowIndex value is " + rowIndex);
+                System.out.println("i value is " + (i/3));
+
                 System.out.println("colIndex value is " + colIndex);
+                System.out.println("i value is " + (i%3));
 
 
-                if (board[rowIndex + j / 3][colIndex + j % 3] != '.' && !cubeSet.add(board[rowIndex + j / 3][colIndex + j % 3]))
+                System.out.println("==============================");
+
+
+                System.out.println("========j value is "+j+"======================"+(j/3));
+                System.out.println("=============================="+(j%3));
+
+                if(board[rowIndex+j/3][colIndex+j%3]!='.' && !cube.add(board[rowIndex+j/3][colIndex+j%3]))
                     return false;
-
             }
+                System.out.println("***");
+                System.out.println("***");
+                System.out.println("***");
+            
         }
-
+        
+        
         return true;
     }
 
@@ -55,6 +94,8 @@ public class Test {
                ,{'.','6','.','.','.','.','2','8','.'}
                ,{'.','.','.','4','1','9','.','.','5'}
                ,{'.','.','.','.','8','.','.','7','9'}};
+
+       System.out.println("=============================="+(2/3));
 
        Test test=new Test();
 
