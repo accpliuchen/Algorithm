@@ -59,7 +59,8 @@ public class Test {
 
     public static void main(String args[]){
        //int[] array=new int[]{4, 2, -3, 6, 1};
-       int[] array=new int[]{64,25,12,22,11};
+       //int[] array=new int[]{64,25,12,22,11};
+        int[] array=new int[]{3,2,1};
 
        Test test=new Test();
 
