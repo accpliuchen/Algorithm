@@ -3,7 +3,7 @@ package com.test.interview.hashMap;
 import java.util.Map;
 import java.util.HashMap;
 
-public class Test {
+/*public class Test {
 
 	public static void main(String args[]){
 		Map<String,Integer> employerNumber=new HashMap<>();
@@ -41,4 +41,4 @@ public class Test {
 		useDiagonals[row+col]=towhat;
 		useRevDiagonals[col-row+n-1]=toWhat;
 	}
-}
+}*/

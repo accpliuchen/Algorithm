@@ -28,6 +28,25 @@ public class Test {
         }
     }
 
+    public static final int notFound=-1;
+
+    public int binarySearch(double s[],int low, int high,double key){
+        int mid;
+        while (low <= high) {
+             mid=low+(high-low)/2;
+
+             if(mid>key)
+                 high=mid-1;
+             else if(mid<key)
+                 low=mid+1;
+             else
+                 return mid;
+
+        }
+        return notFound;
+
+    }
+
 
 
     public static void main(String args[]) throws InterruptedException {
