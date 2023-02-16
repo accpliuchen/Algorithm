@@ -29,8 +29,10 @@ public class Test {
     	return new String(array,0,slow);
   	}
 
+
+
 	public static void main(String args[]){
-		 String str="aa";
+		 String str="aabccdc";
          //String str="aabccdc";
 
 		Test test=new Test();

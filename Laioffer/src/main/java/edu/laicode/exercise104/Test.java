@@ -3,16 +3,20 @@ package edu.laicode.exercise104;
 public class Test {
 
    public int largest(int[][] matrix) {
-        int N=matrix.length;
-        int M=matrix.length;
+       int N=matrix.length;
+       int M=matrix[0].length;
 
-        if(N==0){
-        	return 0;
-        }
+       if(N==0 && M==0){
+           return 0;
+       }
 
-        if(M==0){
-        	return 0;
-        }
+       if(N==0){
+           return 0;
+       }
+
+       if(M==0){
+           return 0;
+       }
 
         int[][] leftUp=leftUp(matrix,N,M);
         int[][] rightDown=rightDown(matrix,N,M);

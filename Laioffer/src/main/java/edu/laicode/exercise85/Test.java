@@ -32,8 +32,8 @@ public class Test {
 		// String large="issippi";
 		// String small="issip";
 
-		String large="bcabc";
-		String small="ab";
+		String large="bcaebac";
+		String small="ec";
 
         Test test=new Test();
         int result=test.strstr(large,small);

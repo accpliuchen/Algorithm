@@ -20,7 +20,7 @@ public class Test {
             if(!stack.isEmpty() && stack.peekFirst() == curChar){
                 while(fast < array.length && stack.peekFirst() == curChar){
 
-                        curChar = array[fast];
+                        //curChar = array[fast];
 
                     fast ++;
 
@@ -41,8 +41,8 @@ public class Test {
 
 
     public static void main(String args[]){
-        String str="abcdddcbba";
-        //String str="aabccdc";
+        //String str="abcdddcbba";
+        String str="aabccdc";
 
         Test test=new Test();
         String result=test.deDup(str);

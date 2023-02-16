@@ -19,7 +19,7 @@ public class Test {
 
 	public static void main(String args[]){
 		Test test=new Test();
-		int result=test.maxProduct(4);
+		int result=test.maxProduct(5);
 
 		System.out.println("result is "+ result);
 	}
