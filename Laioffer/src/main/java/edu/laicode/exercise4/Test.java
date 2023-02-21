@@ -38,7 +38,7 @@ public class Test {
                 }
             }
             swap(array,min_idx,i);
-            printArray(array);
+            //printArray(array);
         }
         return array;
     }

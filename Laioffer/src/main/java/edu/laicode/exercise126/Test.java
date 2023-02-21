@@ -18,13 +18,13 @@ public class Test {
             return root;
         }
 
-//        if(root.key==one.key || root.key==two.key){
-//            return root;
-//        }
-
-        if(root==one || root==two){
+        if(root.key==one.key || root.key==two.key){
             return root;
         }
+
+//        if(root==one || root==two){
+//            return root;
+//        }
 
         TreeNode left=lowestCommonAncestor(root.left,one,two);
         TreeNode right=lowestCommonAncestor(root.right,one,two);

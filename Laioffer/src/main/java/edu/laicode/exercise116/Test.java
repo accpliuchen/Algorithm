@@ -14,7 +14,7 @@ public class Test {
         int end=1;
 
         for(int i=2;i<array.length;i++){
-            if(array[i-1]!=array[i]){
+            if(array[end-1]!=array[i]){
                 array[++end]=array[i];
             }
         }
