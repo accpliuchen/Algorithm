@@ -3,7 +3,9 @@ package com.interview.exercise.exercise103;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Collections;
 
 class TreeNode{
     public int key;
@@ -17,67 +19,53 @@ class TreeNode{
 public class Test {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result=new ArrayList();
-
-        if(root==null){
-            return result;
+        List<List<Integer>> ans=new LinkedList<>();
+        Queue<TreeNode> que=new LinkedList<>();
+        if (root==null){
+            return ans;
         }
-
-        Deque<TreeNode> stack=new LinkedList<TreeNode>();
-        boolean is_order_left = true;
-        stack.offerFirst(root);
-        int layer=0;
-
-        while(!stack.isEmpty()){
-            int size=stack.size();
-            List<Integer> cur=new ArrayList<>();
-            for(int i=0;i<size;i++){
-                if(layer==0){
-                    TreeNode tmp=stack.pollLast();
-                    cur.add(tmp.key);
-
-                    if(tmp.right!=null){
-                        stack.offerFirst(tmp.right);
-                    }
-
-                    if(tmp.left!=null){
-                        stack.offerFirst(tmp.left);
-                    }
-
-                }else{
-                    TreeNode tmp=stack.pollLast();
-                    cur.add(tmp.key);
-
-                    if(tmp.right!=null){
-                        stack.offerFirst(tmp.right);
-                    }
-
-                    if(tmp.left!=null){
-                        stack.offerFirst(tmp.left);
-                    }
-
-
+        int level=0;
+        que.offer(root);
+        while (!que.isEmpty()){
+            List<Integer> subList=new LinkedList<>();
+            int size=que.size();
+            for (int i = 0; i < size; i++) {
+                if (que.peek().left!=null){
+                    que.offer(que.peek().left);
                 }
+                if (que.peek().right!=null){
+                    que.offer(que.peek().right);
+                }
+                subList.add(que.poll().key);
             }
-            layer=1-layer;
-            result.add(cur);
+            if (level%2==1){
+                Collections.reverse(subList);
+            }
+            ans.add(subList);
+            level++;
         }
-
-
-        return result;
+        return ans;
     }
 
     public static void main(String args[]){
 
-        TreeNode tree=new TreeNode(1);
+//        TreeNode tree=new TreeNode(1);
+//
+//        tree.left=new TreeNode(2);
+//        tree.right=new TreeNode(3);
+//
+//        tree.left.left=new TreeNode(4);
+//        //tree.left.right=new TreeNode(4);
+//
+//        tree.right.right=new TreeNode(5);
 
-        tree.left=new TreeNode(2);
-        tree.right=new TreeNode(3);
+        TreeNode tree=new TreeNode(3);
 
-        tree.left.left=new TreeNode(4);
-        //tree.left.right=new TreeNode(4);
+        tree.left=new TreeNode(9);
+        tree.right=new TreeNode(20);
 
-        tree.right.right=new TreeNode(5);
+        tree.right.left=new TreeNode(15);
+        tree.right.right=new TreeNode(7);
 
         Test test=new Test();
         test.zigzagLevelOrder(tree);
