@@ -61,30 +61,30 @@ public class Test {
     }
 
 	public static void main(String args[]){
-//		TreeNode root=new TreeNode(5);
-//		root.left=new TreeNode(2);
-//		root.right=new TreeNode(11);
-//
-//		root.right.left=new TreeNode(6);
-//		root.right.right=new TreeNode(14);
-//
-//		root.right.left.left=new TreeNode(3);
-//
-//		Test test=new Test();
-//		boolean result = test.exist(root,17);
-
-
-		TreeNode root=new TreeNode(1);
+		TreeNode root=new TreeNode(5);
 		root.left=new TreeNode(2);
-//		root.right=new TreeNode(11);
-//
-//		root.right.left=new TreeNode(6);
-//		root.right.right=new TreeNode(14);
-//
-//		root.right.left.left=new TreeNode(3);
+		root.right=new TreeNode(11);
+
+		root.right.left=new TreeNode(6);
+		root.right.right=new TreeNode(14);
+
+		root.right.left.left=new TreeNode(3);
 
 		Test test=new Test();
-		boolean result = test.exist(root,1);
+		boolean result = test.exist(root,17);
+
+
+//		TreeNode root=new TreeNode(1);
+//		root.left=new TreeNode(2);
+////		root.right=new TreeNode(11);
+////
+////		root.right.left=new TreeNode(6);
+////		root.right.right=new TreeNode(14);
+////
+////		root.right.left.left=new TreeNode(3);
+//
+//		Test test=new Test();
+//		boolean result = test.exist(root,1);
 
 		System.out.println("result value is "+ result);
 	}

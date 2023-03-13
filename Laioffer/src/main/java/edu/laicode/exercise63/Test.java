@@ -44,7 +44,8 @@ public class Test {
 
 	public static void main(String args[]){
 	   //String str="abc";
-       String str="aabb";
+       //String str="aabb";
+        String str="abb";
        Test test=new Test();
 
        List<String> result=test.subSets(str);

@@ -7,23 +7,25 @@ public class Test {
 			return;
 		}
 
-		int n=matrix.length-1;
+		int n=matrix.length;
 		int round=n/2;
 
 
 	   for (int i = 0; i < round; ++i) {
-	      for (int j = i; j < n - i; ++j) {
+	      for (int j = i; j < n - i-1; ++j) {
 	        int temp = matrix[i][j];
-	        matrix[i][j] = matrix[n - j][i];
-	        matrix[n  - j][i] = matrix[n  - i][n - j];
-	        matrix[n  - i][n - j] = matrix[j][n - i];
-	        matrix[j][n - i] = temp;
+			matrix[i][j] = matrix[n - 1 - j][i];
+			matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j];
+			matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i];
+			matrix[j][n - 1 - i] = temp;
 	      }
       }
 	}
 
 	public static void main(String args[]){
-		int[][] matrix=new int[][]{ {1,  2,  3},{8,  9,  4},{7,  6,  5} };
+//		int[][] matrix=new int[][]{ {1,  2,  3},{8,  9,  4},{7,  6,  5} };
+
+		int[][] matrix=new int[][]{ {1,  2,  3},{4,5,6 },{7,  8,  9} };
 	    
 	    Test test=new Test();
 
