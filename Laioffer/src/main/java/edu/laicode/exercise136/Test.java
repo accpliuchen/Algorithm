@@ -30,6 +30,8 @@ public class Test {
     	return result;
     }
 
+
+
 	public static void main(String args[]){
 		TreeNode root=new TreeNode(5);
 
@@ -38,5 +40,10 @@ public class Test {
 
 		root.right.left=new TreeNode(6);
 		root.right.right=new TreeNode(14);
+
+
+		Test test=new Test();
+		int result=test.largestSmaller(root,3);
+		System.out.println(result);
 	}
 }
