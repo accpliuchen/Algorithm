@@ -13,12 +13,11 @@ public class Test {
 
     	int left=closest(array,target);
     	int right=left+1;
-
-    	int[] result=new int[k];
+		int[] result=new int[k];
 
     	for(int i=0;i<k;i++){
       		//right>=array.length ||
-			if(right>=array.length || (left>=0 && target-array[left]<= array[right]-target)){
+			if(right>=array.length || left>=0 && target-array[left]<= array[right]-target){
 				result[i]=array[left--];
 			}else{
 				result[i]=array[right++];
@@ -58,9 +57,13 @@ public class Test {
   }
 	
 	public static void main(String args[]){
-		int[] array=new int[]{1, 4, 6, 8};
-		int target= 3;
-		int k= 3;
+//		int[] array=new int[]{1, 4, 6, 8};
+//		int target= 3;
+//		int k= 3;
+
+		int[] array=new int[]{1};
+		int target= 0;
+		int k= 1;
 
 		Test test=new Test();
 		int[] nums=test.kClosest(array,target,k);

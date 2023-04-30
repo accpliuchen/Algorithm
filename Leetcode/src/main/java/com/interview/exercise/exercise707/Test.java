@@ -17,8 +17,8 @@ class MyLinkedList{
 
 
     public MyLinkedList(){
-        head=new ListNode(-1);
-        tail=new ListNode(1);
+        head=new ListNode(0);
+        tail=new ListNode(0);
 
         head.next=tail;
         tail.prev=head;
@@ -92,5 +92,7 @@ public class Test {
         myLinkedList.get(1);              // return 2
         myLinkedList.deleteAtIndex(1);    // now the linked list is 1->3
         myLinkedList.get(1);              // return 3
+
+        System.out.println("");
     }
 }
