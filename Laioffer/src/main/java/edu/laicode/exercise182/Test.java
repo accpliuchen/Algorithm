@@ -19,19 +19,24 @@ public class Test {
 
            	  hm.put(num,true);
            	  hm.put(target-num,true);
-           }
+           }else{
+			   hm.put(num,false);
+		   }
 
-           if(hm.get(num)==null){
-           	hm.put(num,false);
-           }
+//           if(hm.get(num)==null){
+//           	hm.put(num,false);
+//           }
     	}
 
     	return result;
     }
     
 	public static void main(String args[]){
-		int[] array=new int[]{2,1,3,2,4,3,4,2};
-		int target=6;
+//		int[] array=new int[]{2,1,3,2,4,3,4,2};
+//		int target=6;
+
+		int[] array=new int[]{1,1,1,1,1};
+		int target=2;
 
         Test test=new Test();
         List<List<Integer>> result=test.allPairs(array,target);
