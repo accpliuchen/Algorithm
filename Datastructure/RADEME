@@ -1,0 +1,8 @@
+# Java Stream
+
+//under stream test1 folder 
+//Skip from 0 index
+Stream.of(1,2,3,3,2,4).skip(3).forEach(n->System.out.println(n));
+
+//distinct
+//under stream test2 folder
