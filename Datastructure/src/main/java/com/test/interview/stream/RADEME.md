@@ -62,7 +62,7 @@ List<String> list=Arrays.asList("hello","world");
 Stream<String> stream=list.stream();
 
 stream.forEach(n->System.out.println(n));
-
+```
 
 //under stream test5 folder
 //filter 
@@ -83,5 +83,6 @@ List<Project> projects = Project.buildData();
         System.out.println("===================");
         Stream.of(1, 2, 3, 3, 2, 4).skip(4).forEach(n -> System.out.println(n));
 
+```
 
 //merge 
