@@ -1,4 +1,19 @@
 # Java Stream
+# What is stream
+# About Stream
+
+
+Streams are a concept introduced in Java 8 that can handle data in collections, which can be understood as a high-level collection
+
+As we all know, collection manipulation is very cumbersome, but streams can easily filter the collection and manipulate the collection in the form of a declaration.
+
+We do not need to write code, we can write SQL language as we can operate on collection objects. Stream collection operations are transparent to us, we just give commands to the stream, and it will automatically give us the results we want. Since the operation process is handled entirely by Java, it can choose the best method to handle the current hardware environment, and we do not need to write complex and error-prone multi-threaded code
+
+the stream is thread-safe, a sequential stream is executed in a single thread running on one CPU core, and a parallel stream is executed by different threads. running on multiple CPU cores in a computer.
+
+
+//Data folder, building Data
+
 
 //under stream test1 folder 
 //Skip from 0 index
@@ -6,3 +21,7 @@ Stream.of(1,2,3,3,2,4).skip(3).forEach(n->System.out.println(n));
 
 //distinct
 //under stream test2 folder
+Stream of distinct data
+
+
+//merge 
