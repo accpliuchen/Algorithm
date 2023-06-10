@@ -52,15 +52,36 @@ Before you can use a stream, you first need to have a data source and get the st
 
 
 //Data folder, building Data
+Project.java
+
+//Test4 folder
+//create stream via List
+```java
+
+List<String> list=Arrays.asList("hello","world");
+Stream<String> stream=list.stream();
+
+stream.forEach(n->System.out.println(n));
 
 
-//under stream test1 folder 
-//Skip from 0 index
-Stream.of(1,2,3,3,2,4).skip(3).forEach(n->System.out.println(n));
-
+//under stream test5 folder
+//filter 
 //distinct
-//under stream test2 folder
-Stream of distinct data
+//limit
+//skip
+```java
+List<Project> projects = Project.buildData();
+
+        List<Project> collect = projects.stream()
+                .filter(project -> project.getStars() > 1000)
+                .collect(Collectors.toList());
+
+        // distinct
+        Stream<Integer> numbers = Stream.of(1, 2, 3, 3, 2, 4);
+        numbers.distinct().limit(3).forEach(n -> System.out.println(n));
+
+        System.out.println("===================");
+        Stream.of(1, 2, 3, 3, 2, 4).skip(4).forEach(n -> System.out.println(n));
 
 
 //merge 
