@@ -64,7 +64,7 @@ Stream<String> stream=list.stream();
 stream.forEach(n->System.out.println(n));
 ```
 
-//under stream test5 folder
+//test5 folder
 //filter 
 //distinct
 //limit
@@ -72,17 +72,65 @@ stream.forEach(n->System.out.println(n));
 ```java
 List<Project> projects = Project.buildData();
 
-        List<Project> collect = projects.stream()
+List<Project> collect = projects.stream()
                 .filter(project -> project.getStars() > 1000)
                 .collect(Collectors.toList());
 
-        // distinct
-        Stream<Integer> numbers = Stream.of(1, 2, 3, 3, 2, 4);
-        numbers.distinct().limit(3).forEach(n -> System.out.println(n));
+// distinct
+Stream<Integer> numbers = Stream.of(1, 2, 3, 3, 2, 4);
+numbers.distinct().limit(3).forEach(n -> System.out.println(n));
 
-        System.out.println("===================");
-        Stream.of(1, 2, 3, 3, 2, 4).skip(4).forEach(n -> System.out.println(n));
+System.out.println("===================");
+Stream.of(1, 2, 3, 3, 2, 4).skip(4).forEach(n -> System.out.println(n));
 
 ```
+//test6 folder
+//map
+```java
+ List<String> words = Arrays.asList("Java 8", "Lambdas", "In", "Action");
 
-//merge 
+ words.stream()
+                .map(word -> word.length())
+                .collect(Collectors.toList())
+        .forEach(i -> System.out.println(i)); 
+
+List<Project> projects = Project.buildData();
+projects.stream().map(p->p.getName()).collect(Collectors.toList()).forEach(n->System.out.println(n));
+```
+
+//flatMap
+//test7 folder
+```java
+List<String> list = Arrays.asList("I am a boy", "I love the girl", "But the girl loves another girl");
+
+list.stream()
+                .map(word -> word.split(" "))   // Stream<String>
+                .flatMap(Stream::of)
+                .distinct()
+                .collect(Collectors.toList()).forEach(n->System.out.println(n));
+```
+
+//Match element
+//test8 folder
+//allMatch
+//anyMatch
+//nonMatch
+//findFirst
+//findAny
+```java
+List<Project> projects = Project.buildData();
+
+boolean hasBiezhi = projects.stream()
+                .anyMatch(p -> p.getAuthor().equals("biezhi"));
+
+System.out.println(hasBiezhi);
+
+System.out.println(projects.stream()
+                .allMatch(p -> p.getAuthor().equals("biezhi")));
+
+System.out.println(projects.stream()
+                .noneMatch(p -> p.getAuthor().equals("biezhi")));
+
+System.out.println(projects.stream().findAny().get());
+System.out.println(projects.stream().findFirst().get());
+```
