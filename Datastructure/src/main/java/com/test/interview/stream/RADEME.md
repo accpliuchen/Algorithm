@@ -64,11 +64,11 @@ Stream<String> stream=list.stream();
 stream.forEach(n->System.out.println(n));
 ```
 
-//test5 folder
-//filter 
-//distinct
-//limit
-//skip
+test5 folder
+filter 
+distinct
+limit
+skip
 ```java
 List<Project> projects = Project.buildData();
 
@@ -84,8 +84,8 @@ System.out.println("===================");
 Stream.of(1, 2, 3, 3, 2, 4).skip(4).forEach(n -> System.out.println(n));
 
 ```
-//test6 folder
-//map
+test6 folder
+map
 ```java
  List<String> words = Arrays.asList("Java 8", "Lambdas", "In", "Action");
 
@@ -98,8 +98,8 @@ List<Project> projects = Project.buildData();
 projects.stream().map(p->p.getName()).collect(Collectors.toList()).forEach(n->System.out.println(n));
 ```
 
-//flatMap
-//test7 folder
+flatMap
+test7 folder
 ```java
 List<String> list = Arrays.asList("I am a boy", "I love the girl", "But the girl loves another girl");
 
@@ -110,13 +110,13 @@ list.stream()
                 .collect(Collectors.toList()).forEach(n->System.out.println(n));
 ```
 
-//Match element
-//test8 folder
-//allMatch
-//anyMatch
-//nonMatch
-//findFirst
-//findAny
+Match element
+test8 folder
+allMatch
+anyMatch
+nonMatch
+findFirst
+findAny
 ```java
 List<Project> projects = Project.buildData();
 
@@ -134,3 +134,93 @@ System.out.println(projects.stream()
 System.out.println(projects.stream().findAny().get());
 System.out.println(projects.stream().findFirst().get());
 ```
+
+
+reduce
+test9 folder
+a varible as result
+```java
+     List<Project> projects = Project.buildData();
+        List<Integer> numbers  = Arrays.asList(2, 4, 5, 6);
+
+        int sum = 0;
+        for (int x : numbers) {
+            sum += x;
+        }
+
+        System.out.println(sum);
+
+        Integer reduce = numbers.stream()
+                .reduce(0, (a, b) -> {System.out.println("a==="+a); System.out.println("b==="+b); return a+b;});
+        System.out.println(reduce);
+```
+
+
+data stream InputStream,DoubleStream, LongStream
+test10 folder
+a varible as result
+```java
+
+List<Project> projects=Project.buildData();
+
+        OptionalInt max=projects.stream().mapToInt(p->p.getStars()).max();
+
+        System.out.println(max.getAsInt());
+```
+
+
+implemet Fibonacci tuple sequence by steram iterate
+test11 folder
+```java
+@AllArgsConstructor
+    static class Tuple{
+        int first;
+        int second;
+    }
+
+    public static void main(String args[]){
+        Stream.iterate(new Tuple(0,1),tuple->new Tuple(tuple.second,tuple.first+tuple.second)).limit(20).forEach(tuple->System.out.println("("+ tuple.first +","+ tuple.second +")"));
+    }
+```
+
+
+output by stream
+test12 folder
+```java
+List<Project> projects=Project.buildData();
+
+projects.stream().map(Project::getName).limit(3).collect(Collectors.toList()).forEach(n->System.out.println(n));
+```
+
+filter and reduce
+test14 folder
+```java
+
+        List<Project> projects = Project.buildData();
+        Integer biezhi = projects.stream()
+                .filter(p -> p.getAuthor().equals("biezhi"))
+                .map(p -> p.getStars())
+                .reduce(0, Integer::sum);
+        System.out.println(biezhi);
+```
+
+
+The default number of threads used for concurrent streams is equal to the number of processor cores on your machine.
+
+This value can be modified by this method, which is a global property.
+
+```java
+System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "12").
+```
+
+
+**Data sources and decomposability of streams**
+
+| Source | Decomposability |
+|:-----:|:-------|
+| `ArrayList` | very good |
+| `LinkedList` | poor |
+| `IntStream.range` | very good |
+| `Stream.iterate` | poor |
+| `HashSet` | good |
+| `TreeSet` | good |
