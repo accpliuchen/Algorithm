@@ -1,8 +1,8 @@
-package edu.laicode.exercise1200;
+package com.interview.exercise.exercise1200;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Test {
