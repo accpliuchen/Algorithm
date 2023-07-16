@@ -53,6 +53,31 @@ public class Test {
 
     }
 
+    public List<Integer> inorderTraversal_Deque(TreeNode root){
+        List<Integer> result=new ArrayList<>();
+
+        if(root==null){
+            return result;
+        }
+
+        Deque<TreeNode> stack=new ArrayDeque<>();
+        TreeNode visiting=root;
+
+        while(visiting!=null || !stack.isEmpty()){
+            if(visiting!=null){
+                stack.offerFirst(visiting);
+                visiting=visiting.left;
+            }else{
+                TreeNode curRoot=stack.pollFirst();
+                result.add(curRoot.val);
+                visiting=curRoot.right;
+            }
+        }
+
+
+        return result;
+    }
+
     public static void main(String args[]){
         TreeNode tree=new TreeNode(1);
         tree.right=new TreeNode(2);
