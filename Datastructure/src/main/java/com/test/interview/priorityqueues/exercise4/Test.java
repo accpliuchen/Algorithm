@@ -5,8 +5,8 @@ import java.util.Collections;
 
 public class Test {
 	public static void main(String args[]){
-		// PriorityQueue<Integer> minHeap=new PriorityQueue<Integer>();
-		PriorityQueue<Integer> minHeap=new PriorityQueue<Integer>(Collections.reverseOrder());
+		PriorityQueue<Integer> minHeap=new PriorityQueue<Integer>();
+		//PriorityQueue<Integer> minHeap=new PriorityQueue<Integer>(Collections.reverseOrder());
 
 		minHeap.offer(5);
 	   	minHeap.offer(4);
