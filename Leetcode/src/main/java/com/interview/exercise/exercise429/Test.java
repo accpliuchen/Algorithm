@@ -72,42 +72,42 @@ public class Test {
 
 	public static void main(String args[]){
 
-//        List sub_list=new ArrayList();
-//        Node level_sub_left=new Node(5);
-//        Node level_sub_right=new Node(6);
-//
-//        sub_list.add(level_sub_left);
-//        sub_list.add(level_sub_right);
-//
-//        Node level_left=new Node(3,sub_list);
-//        Node level_center=new Node(2);
-//        Node level_right=new Node(4);
-//
-//        List list=new ArrayList();
-//
-//        list.add(level_left);
-//        list.add(level_center);
-//        list.add(level_right);
-//
-//        Node root=new Node(1,list);
-//
-//
-//        Test test=new Test();
-// 		List<List<Integer>> result=test.levelOrder(root);
-//
-//        System.out.println("===");
+        List sub_list=new ArrayList();
+        Node level_sub_left=new Node(5);
+        Node level_sub_right=new Node(6);
+
+        sub_list.add(level_sub_left);
+        sub_list.add(level_sub_right);
+
+        Node level_left=new Node(3,sub_list);
+        Node level_center=new Node(2);
+        Node level_right=new Node(4);
+
+        List list=new ArrayList();
+
+        list.add(level_left);
+        list.add(level_center);
+        list.add(level_right);
+
+        Node root=new Node(1,list);
 
 
-        Map<Integer, String> treeMap = new HashMap<>();
-        treeMap.put(1, "Baeldung");
-        treeMap.put(1, "Baeldung");
+        Test test=new Test();
+ 		List<List<Integer>> result=test.levelOrder(root);
 
-        System.out.println(treeMap.size() == 1);
+        System.out.println("===");
 
-        Map<Integer, String> treeMap2 = new TreeMap<>();
-        treeMap2.put(1, "Baeldung");
-        treeMap2.put(1, "Baeldung");
 
-        System.out.println(treeMap2.size() == 1);
+//        Map<Integer, String> treeMap = new HashMap<>();
+//        treeMap.put(1, "Baeldung");
+//        treeMap.put(1, "Baeldung");
+//
+//        System.out.println(treeMap.size() == 1);
+//
+//        Map<Integer, String> treeMap2 = new TreeMap<>();
+//        treeMap2.put(1, "Baeldung");
+//        treeMap2.put(1, "Baeldung");
+//
+//        System.out.println(treeMap2.size() == 1);
 	}
 }

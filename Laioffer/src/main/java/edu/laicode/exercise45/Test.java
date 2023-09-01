@@ -61,12 +61,12 @@ public class Test {
   }
 	 public static void main(String args[]){
         TreeNode root=new TreeNode(5);
-        root.left=new TreeNode(2);
+        root.left=new TreeNode(3);
         root.right=new TreeNode(8);
         root.left.left=new TreeNode(1);
-        root.left.right=new TreeNode(3);
+        root.left.right=new TreeNode(4);
 
-        root.right.right=new TreeNode(9);
+        root.right.right=new TreeNode(11);
 
         Test test=new Test();
         List<Integer> result=test.postOrder(root);

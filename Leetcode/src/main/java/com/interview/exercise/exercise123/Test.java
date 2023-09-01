@@ -1,6 +1,5 @@
 package com.interview.exercise.exercise123;
 
-import javax.xml.soap.Text;
 import java.text.DecimalFormat;
 
 public class Test {

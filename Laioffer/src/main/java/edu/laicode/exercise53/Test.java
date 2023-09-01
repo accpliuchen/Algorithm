@@ -60,13 +60,38 @@ public class Test {
 
 	public static void main(String args[]){
 
-		TreeNode root=new TreeNode(3);
+//		TreeNode root=new TreeNode(3);
+//        root.left=new TreeNode(2);
+//        root.right=new TreeNode(8);
+//        root.right.left=new TreeNode(6);
+//        root.right.left.left=new TreeNode(5);
+//		root.right.right=new TreeNode(10);
+//        root.right.right.right=new TreeNode(12);
+//
+//        int target=8;
+
+
+//        TreeNode root=new TreeNode(5);
+//        root.left=new TreeNode(3);
+//        root.left.left=new TreeNode(2);
+//        root.left.right=new TreeNode(4);
+//        root.right=new TreeNode(6);
+//        root.right.right=new TreeNode(7);
+//
+//
+//        int target=3;
+
+       TreeNode root=new TreeNode(3);
         root.left=new TreeNode(2);
+
         root.right=new TreeNode(8);
+        root.right.right=new TreeNode(12);
         root.right.left=new TreeNode(6);
-        root.right.left.left=new TreeNode(5);
-		root.right.right=new TreeNode(10);
-        root.right.right.right=new TreeNode(12);
+        root.right.right.left=new TreeNode(11);
+        root.right.right.right=new TreeNode(14);
+
+        root.right.right.left.left=new TreeNode(9);
+        root.right.right.left.left.right=new TreeNode(10);
 
         int target=8;
 

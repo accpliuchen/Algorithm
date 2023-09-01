@@ -71,11 +71,17 @@ public class Test {
 		root.left.right=new TreeNode(4);
 
 
+//		TreeNode second=new TreeNode(5);
+//		second.left=new TreeNode(8);
+//		second.right=new TreeNode(3);
+//		second.right.left=new TreeNode(1);
+//		second.right.right=new TreeNode(4);
+
 		TreeNode second=new TreeNode(5);
-		second.left=new TreeNode(8);
-		second.right=new TreeNode(3);
-		second.right.left=new TreeNode(1);
-		second.right.right=new TreeNode(4);
+		second.left=new TreeNode(3);
+		second.right=new TreeNode(8);
+		second.left.left=new TreeNode(1);
+		second.left.right=new TreeNode(4);
 
 		Test test=new Test();
 		boolean result=test.isTweakedIdentical(root,second);

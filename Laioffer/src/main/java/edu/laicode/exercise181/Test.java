@@ -33,8 +33,11 @@ public class Test {
 	  }
 
 	public static void main(String args[]){
-		int[] array=new int[]{1,3,2,4};
-        int target=5;
+//		int[] array=new int[]{1,3,2,4};
+//        int target=5;
+
+		int[] array=new int[]{1,2,2,4};
+		int target=6;
 
         Test test=new Test();
         List<List<Integer>> result=test.allPairs(array,target);

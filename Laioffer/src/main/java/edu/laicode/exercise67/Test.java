@@ -20,8 +20,12 @@ public List<String> topKFrequent(String[] combo, int k) {
 //	return 1;
 //}
 
-		return e1.getValue().compareTo(e2.getValue());
-}
+		if(e1.getValue()== e2.getValue()){
+			return e2.getKey().compareTo(e1.getKey());
+		}else{
+			return Integer.compare(e1.getValue(),e2.getValue());
+		}
+	}
 });
 
 	//add k elements
