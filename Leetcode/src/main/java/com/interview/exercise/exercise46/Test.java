@@ -9,6 +9,9 @@ import java.util.List;
 //https://www.jiuzhang.com/solution/permutations/
 
 //https://blog.csdn.net/zxzxzx0119/article/details/81452269
+
+import reactor.core.publisher.Mono;
+
 public class Test {
 
 
@@ -69,34 +72,34 @@ public class Test {
 //    }
 
 
-//    public List<List<Integer>> permute(int[] nums){
-//        List<List<Integer>> res=new ArrayList<>();
-//        dfs(res,nums,0);
-//        return res;
-//    }
-//
-//    public void dfs(List<List<Integer>> res,int[] nums, int cur){
-//        if(cur==nums.length){
-//            List<Integer> temp=new ArrayList<>();
-//            for(Integer item:nums){
-//                temp.add(item);
-//            }
-//            res.add(temp);
-//
-//        }else{
-//            for(int i=cur;i<nums.length;i++){
-//                swap(nums,cur,i);
-//                dfs(res,nums,cur+1);
-//                swap(nums,cur,i);
-//            }
-//        }
-//    }
-//
-//    private void swap(int[] arr,int a,int b){
-//        int temp=arr[a];
-//        arr[a]=arr[b];
-//        arr[b]=temp;
-//    }
+    public List<List<Integer>> permute(int[] nums){
+        List<List<Integer>> res=new ArrayList<>();
+        dfs(res,nums,0);
+        return res;
+    }
+
+    public void dfs(List<List<Integer>> res,int[] nums, int cur){
+        if(cur==nums.length){
+            List<Integer> temp=new ArrayList<>();
+            for(Integer item:nums){
+                temp.add(item);
+            }
+            res.add(temp);
+
+        }else{
+            for(int i=cur;i<nums.length;i++){
+                swap(nums,cur,i);
+                dfs(res,nums,cur+1);
+                swap(nums,cur,i);
+            }
+        }
+    }
+
+    private void swap(int[] arr,int a,int b){
+        int temp=arr[a];
+        arr[a]=arr[b];
+        arr[b]=temp;
+    }
 
 
 //    public List<List<Integer>> permute(int[] nums){
@@ -129,40 +132,52 @@ public class Test {
 //        return res;
 //    }
 
-    public List<List<Integer>> permute(int[] nums){
-        LinkedList<List<Integer>> res=new LinkedList<List<Integer>>();
-        res.add(new ArrayList<>());
-
-        for(int i=0;i<nums.length;i++){
-            int size=res.size();
-            for(;size>0;size--){
-                List<Integer> item=res.pollFirst();
-
-                //System.out.println("pollFirst value size is "+ item.size());
-                for(int j=0;j<=item.size();j++){
-
-
-//                    System.out.println("j value is "+ j);
-
-                    List<Integer> temp=new ArrayList<>(item);
-
-                    System.out.println("temp nums[i] "+i+ " value is "+ nums[i]);
-
-                    temp.add(j,nums[i]);
-                    res.add(temp);
-                }
-            }
-        }
-    return res;
-
-    }
+//    public List<List<Integer>> permute(int[] nums){
+//        LinkedList<List<Integer>> res=new LinkedList<List<Integer>>();
+//        res.add(new ArrayList<>());
+//
+//        for(int i=0;i<nums.length;i++){
+//            int size=res.size();
+//            for(;size>0;size--){
+//                List<Integer> item=res.pollFirst();
+//
+//                //System.out.println("pollFirst value size is "+ item.size());
+//                for(int j=0;j<=item.size();j++){
+//
+//
+////                    System.out.println("j value is "+ j);
+//
+//                    List<Integer> temp=new ArrayList<>(item);
+//
+//                    System.out.println("temp nums[i] "+i+ " value is "+ nums[i]);
+//
+//                    temp.add(j,nums[i]);
+//                    res.add(temp);
+//                }
+//            }
+//        }
+//    return res;
+//
+//    }
 
     public static void main(String args[]){
-        Test test=new Test();
+//        Test test=new Test();
+//
+////        int[] nums={1,2,3};
+//
+////        int[] nums={0,1};
+//
+//        int[] nums={1,1,2};
+//
+//        List<List<Integer>> result=test.permute(nums);
+//        System.out.print("result size is "+result.size());
 
-        int[] nums={1,2,3};
+        Mono<String> mono = Mono.just("Hello, World!");
 
-        List<List<Integer>> result=test.permute(nums);
-        //System.out.print("result size is "+result.size());
+        // Subscribe to the Mono to consume the value
+        mono.subscribe(value -> {
+            System.out.println("Received: " + value);
+        });
+
     }
 }

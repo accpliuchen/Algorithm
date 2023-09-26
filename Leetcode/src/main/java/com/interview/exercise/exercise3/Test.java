@@ -110,7 +110,7 @@ public class Test {
 
     public static void main(String args[]){
         //String str="bbbbb";
-        String str="bbbbb";
+        String str="abcabcbb";
 
         Test test=new Test();
         int result=test.lengthOfLongestSubstring(str);

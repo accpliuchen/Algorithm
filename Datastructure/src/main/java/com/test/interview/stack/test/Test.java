@@ -2,6 +2,9 @@ package com.test.interview.stack.test;
 
 import java.util.Stack;
 
+
+//Time Complexity: O(n*n).
+//Auxiliary Space: O(n)
 public class Test {
 
     static Stack<Integer> sortStack(Stack<Integer> input){
