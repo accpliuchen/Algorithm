@@ -44,9 +44,11 @@ public class Test {
     public static void main(String args[]){
         //int[] nums=new int[]{1,2,3};
 
+        int[] nums=new int[]{2,3,1};
+
         //int[] nums=new int[]{3,2,1};
 
-        int[] nums=new int[]{1,1,5};
+        //int[] nums=new int[]{1,1,5};
 
         Test test=new Test();
         test.nextPermutation(nums);
