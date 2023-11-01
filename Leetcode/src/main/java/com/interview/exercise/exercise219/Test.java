@@ -21,9 +21,11 @@ public class Test {
 	}
 
 	public static void main(String args[]){
-		int[] nums=new int[]{1,2,3,1,2,3};
-		int k=2;
+//		int[] nums=new int[]{1,2,3,1,2,3};
+//		int k=2;
 
+		int[] nums=new int[]{1,2,3,1};
+		int k=3;
 		Test test=new Test();
 		boolean result=test.containsNearbyDuplicate(nums,k);
 
