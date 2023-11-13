@@ -34,6 +34,8 @@ public class Test {
             int node=queue.poll();
             nodeVisited++;
 
+
+            System.out.println("==="+node);
             for(int neighbor: adj.get(node)){
                 indegree[neighbor]--;
 

@@ -21,7 +21,7 @@ public class Test {
 
        int value=0;
 
-       while(l1!=null && l2!=null && value!=0){
+       while(l1!=null || l2!=null || value!=0){
             if(l1!=null){
             	value+=l1.value;
             	l1=l1.next;
@@ -48,5 +48,8 @@ public class Test {
 	  root2.next=new ListNode(6);
 	  root2.next.next=new ListNode(4);
 
+
+	  Test test=new Test();
+	  test.addTwoNumbers(root,root2);
 	}
 }

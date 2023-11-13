@@ -82,9 +82,9 @@ public class Test {
     public static void main(String[] args) {
         int[] array=new int[]{1, 3, 5};
         NumArray obj = new NumArray(array);
-//        obj.sumRange(0, 2); // return 1 + 3 + 5 = 9
-//        obj.update(1, 2);   // nums = [1, 2, 5]
-//        obj.sumRange(0, 2); // return 1 + 2 + 5 = 8
+        obj.sumRange(0, 2); // return 1 + 3 + 5 = 9
+        obj.update(1, 2);   // nums = [1, 2, 5]
+        obj.sumRange(0, 2); // return 1 + 2 + 5 = 8
 
         System.out.println("===");
     }
