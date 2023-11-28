@@ -1,10 +1,10 @@
-package com.interview.exercise.exercise815;
+package com.interview.exercise.exercise274;
 
 import java.util.Arrays;
 
 public class Test {
 
-    
+
     public int hIndex(int[] citations){
         Arrays.sort(citations);
         int i=0;
@@ -28,3 +28,4 @@ public class Test {
 
     }
 }
+
