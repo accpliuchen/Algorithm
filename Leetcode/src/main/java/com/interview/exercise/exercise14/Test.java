@@ -27,9 +27,8 @@ public class Test {
 
 
     public static void  main(String args[]){
-//        String[] str={"flower","flow","flight"};
-
-        String[] str={"dog","racecar","car"};
+        String[] str={"flower","flow","flight"};
+        //String[] str={"dog","racecar","car"};
 
         Test test=new Test();
 

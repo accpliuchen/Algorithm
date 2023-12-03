@@ -51,8 +51,12 @@ public class Test {
     }
 
     public static void main(String args[]){
+//        String s="abcd";
+//        String t="acde";
+
         String s="abcd";
-        String t="acde";
+        String t="bcdf";
+
         int maxCost=0;
 
         Test test=new Test();
