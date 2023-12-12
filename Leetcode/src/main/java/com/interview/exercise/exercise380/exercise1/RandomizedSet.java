@@ -57,7 +57,7 @@ class RandomizedSet {
         //randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.
         System.out.println("result 1  value is "+ randomizedSet.getRandom());
 
-        randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
+        randomizedSet.remove(2); // Removes 1 from the set, returns true. Set now contains [2].
         randomizedSet.insert(2); // 2 was already in the set, so return false.
         //randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
 
