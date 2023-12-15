@@ -59,8 +59,8 @@ public class Test {
 
     public static void main(String args[]){
 
-        //int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
-        int[][] matrix = {{3},{2}};
+        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+        //int[][] matrix = {{3},{2}};
 
         Test test=new Test();
         List<Integer> result=test.spiralOrder(matrix);
