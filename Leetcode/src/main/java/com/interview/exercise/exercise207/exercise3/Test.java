@@ -50,16 +50,16 @@ public class Test {
     }
 
     public static void main(String args[]){
-//        int numCourses = 2;
+        int numCourses = 2;
 ////        int[][]prerequisites ={{1,0},{0,1}};
-//        int[][]prerequisites ={{1,0}};
+        int[][]prerequisites ={{1,0}};
 
 
 //        int numCourses = 6;
 //        int[][]prerequisites ={{0,2},{1,2},{1,3},{1,4},{2,0},{2,3},{2,5},{3,5},{4,5}};
 
-        int numCourses = 4;
-        int[][]prerequisites ={{1,0},{2,0},{3,1},{3,2}};
+//        int numCourses = 4;
+//        int[][]prerequisites ={{1,0},{2,0},{3,1},{3,2}};
 
         Test test=new Test();
         boolean result=test.canFinish(numCourses,prerequisites);
