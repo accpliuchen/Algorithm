@@ -22,6 +22,12 @@ public class Test {
 
  	public static void main(String args[]){
  		 int[] array=new int[]{3,2,3};
+		  
+		  Test test=new Test();
+		  
+		  int result=test.majorityElement(array);
+		  
+		  System.out.println("result value is "+ result);
 
  	}
 }
