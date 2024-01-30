@@ -31,21 +31,21 @@ public class Test {
     }
 
     public static void main(String args[]) {
-        TreeNode tree = new TreeNode(3);
-        tree.left = new TreeNode(5);
-        tree.right = new TreeNode(1);
-        tree.left.left = new TreeNode(6);
-        tree.left.right = new TreeNode(2);
-        tree.right.left = new TreeNode(0);
+        TreeNode tree = new TreeNode(6);
+        tree.left = new TreeNode(2);
+        tree.right = new TreeNode(8);
+        tree.left.left = new TreeNode(0);
+        tree.left.right = new TreeNode(4);
+        tree.right.left = new TreeNode(7);
         tree.right.right = new TreeNode(8);
 
 
-        tree.left.right.left = new TreeNode(7);
-        tree.left.right.right = new TreeNode(4);
+        tree.left.right.left = new TreeNode(3);
+        tree.left.right.right = new TreeNode(5);
 
         //TreeNode target =new TreeNode(5);
-        TreeNode p = tree.left;
-        TreeNode q = tree.right;
+        TreeNode p = new TreeNode(3);
+        TreeNode q = new TreeNode(5);
 
         Test test = new Test();
         TreeNode node = test.lowestCommonAncestor(tree, p, q);
